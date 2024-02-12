@@ -5,9 +5,8 @@ import ErrorPage from "../pages/ErrorPage";
 import Channels from "../pages/Channels";
 import Recharge from "../pages/Recharge";
 import Login from "../pages/Login";
-import Buy from "../pages/Buy";
-import AboutUs from "../pages/AboutUs";
-import ContactUs from "../pages/ContactUs";
+import Packages from "../pages/Packages";
+import GetConnection from "../pages/GetConnection";
 
 export const router = createBrowserRouter([
   {
@@ -28,16 +27,12 @@ export const router = createBrowserRouter([
         element: <Recharge />
       },
       {
-        path: '/buy',
-        element: <Buy />
+        path: '/packages',
+        element: <Packages />
       },
       {
-        path: '/about-us',
-        element: <AboutUs />
-      },
-      {
-        path: '/contact-us',
-        element: <ContactUs />
+        path: '/get-connection',
+        element: <GetConnection />
       },
       {
         path: '/login',

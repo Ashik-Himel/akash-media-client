@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-import { FaPlusCircle } from 'react-icons/fa';
+import { GoPackage } from "react-icons/go";
+import { FaPlus } from 'react-icons/fa';
 import { FaArrowRight, FaXmark } from 'react-icons/fa6';
-import {BiSolidContact} from 'react-icons/bi';
-import {IoIosContact} from 'react-icons/io';
 import {IoHomeSharp} from 'react-icons/io5';
 import {PiTelevision} from 'react-icons/pi';
-import {MdOutlineElectricBolt} from 'react-icons/md';
+import {MdLogin, MdOutlineElectricBolt} from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 
 export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
@@ -35,21 +34,21 @@ export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
             </div>
             <FaArrowRight />
           </NavLink>
-          <NavLink to='/buy' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+          <NavLink to='/packages' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
             <div className="flex items-center gap-4">
-              <FaPlusCircle className="text-xl" /> Buy
+              <GoPackage className="text-xl" /> Packages
             </div>
             <FaArrowRight />
           </NavLink>
-          <NavLink to='/about-us' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+          <NavLink to='/get-connection' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
             <div className="flex items-center gap-4">
-              <IoIosContact className="text-xl" /> About Us
+              <FaPlus className="text-xl" /> Get a connection
             </div>
             <FaArrowRight />
           </NavLink>
-          <NavLink to='/contact-us' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+          <NavLink to='/login' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
             <div className="flex items-center gap-4">
-              <BiSolidContact className="text-xl" /> Contact Us
+              <MdLogin className="text-xl" /> Login
             </div>
             <FaArrowRight />
           </NavLink>

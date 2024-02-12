@@ -43,17 +43,14 @@ export default function Header() {
               <NavLink to='/recharge' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Recharge</NavLink>
             </li>
             <li>
-              <NavLink to='/buy' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Buy</NavLink>
+              <NavLink to='/packages' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Packages</NavLink>
             </li>
             <li>
-              <NavLink to='/about-us' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>About Us</NavLink>
+              <NavLink to='/get-connection' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Get a connection</NavLink>
             </li>
             <li>
-              <NavLink to='/contact-us' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Contact Us</NavLink>
-            </li>
-            <div>
               <Link to='/login' className='btn btn-primary'>Login</Link>
-            </div>
+            </li>
           </ul>
 
           <div className='flex justify-center items-center gap-4 lg:hidden'>
