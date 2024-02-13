@@ -3,6 +3,7 @@ import HomeSlider from "../components/home/HomeSlider";
 import QuickLinksSection from "../components/home/QuickLinksSection";
 import WhatWeProvide from "../components/home/WhatWeProvide";
 import PackagesSection from "../components/home/PackagesSection";
+import NewConnectionSection from "../components/home/NewConnectionSection";
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <HomeSlider />
       <QuickLinksSection />
       <WhatWeProvide />
-      {/* <PackagesSection /> */}
+      <PackagesSection />
+      <NewConnectionSection />
     </main>
   );
 }
