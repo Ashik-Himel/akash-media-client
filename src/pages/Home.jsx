@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import HomeSlider from "../components/home/HomeSlider";
+import QuickLinksSection from "../components/home/QuickLinksSection";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       </Helmet>
 
       <HomeSlider />
+      <QuickLinksSection />
     </main>
   );
 }

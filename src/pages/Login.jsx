@@ -28,7 +28,7 @@ export default function Login() {
         <title>Login - Akash Media</title>
       </Helmet>
 
-      <section className="mt-10">
+      <section className="mt-6">
         <div className="container">
           <form className="bg-primary bg-opacity-10 px-6 py-8 rounded-lg w-full max-w-[500px] mx-auto" onSubmit={handleLogin}>
             <h2 className="text-3xl font-semibold text-primary text-center mb-6">Login to your account</h2>
