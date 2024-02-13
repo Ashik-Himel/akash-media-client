@@ -1,17 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import brandLogo from '../../assets/akash-media.png';
 import facebookIcon from '../../assets/facebook.png';
 import instagramIcon from '../../assets/instagram.png';
 import whatsappIcon from '../../assets/whatsapp.png';
 
 export default function Footer() {
+  const {pathname} = useLocation();
+
+  if (pathname === '/login') return null;
+
   return (
     <footer className='bg-primary bg-opacity-10 mt-10'>
       <div className="container">
         <div className='py-10 grid grid-cols-[auto] sm:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] gap-8 justify-between items-center'>
           <div className='sm:col-span-2 lg:col-span-1'>
             <img src={brandLogo} alt="Brand Logo" className='w-[120px] block mb-4' />
-            <p className='block mb-2 max-w-[350px]'>Akash Media is a company of Media Group. It provides digital network services. It has 60+ HD channels.</p>
+            <p className='block mb-2 max-w-[350px]'>Akash Media is a company of Media Group. It provides digital network services. It has 100+ TV channels with 60+ HD channels.</p>
             <span className='block mb-6'><span className='font-semibold'>Mobile:</span> <a href="tel:+8801796775774" className='text-primary'>+8801796-775774</a></span>
             <div className='flex items-center gap-6'>
               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
@@ -30,7 +34,7 @@ export default function Footer() {
             <div className='flex flex-col items-start gap-2 font-medium'>
               <Link to='/recharge'>Recharge</Link>
               <Link to='/packages'>Packages</Link>
-              <Link to='/channels'>Channels</Link>
+              <Link to='/get-connection'>Get a connection</Link>
             </div>
           </div>
           <div>
