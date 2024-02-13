@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 const QuickLinkCard = ({to, icon, altText, text}) => {
   return (
-    <Link to={to} className='bg-primary bg-opacity-10 p-4 rounded flex justify-center items-center gap-4'>
+    <Link to={to} className='bg-primary bg-opacity-10 p-4 rounded flex justify-start items-center gap-4'>
       <img src={icon} alt={altText} className='w-8' />
       <span className='text-xl font-semibold'>{text}</span>
     </Link>
@@ -18,7 +18,7 @@ const QuickLinkCard = ({to, icon, altText, text}) => {
 
 export default function QuickLinksSection() {
   return (
-    <section className="py-12">
+    <section className="py-12 lg:py-16">
       <div className="container">
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 justify-center items-center'>
           <QuickLinkCard to='/channels' icon={channelsIcon} altText='Channel Icon' text='Channel list' />
