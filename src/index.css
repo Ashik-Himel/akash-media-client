@@ -10,3 +10,16 @@
     @apply text-white;
   }
 }
+
+swiper-container::part(button-prev) {
+  @apply text-white bg-primary py-2 px-3 rounded-full w-4 h-6;
+}
+swiper-container::part(button-next) {
+  @apply text-white bg-primary py-2 px-3 rounded-full w-4 h-6;
+}
+swiper-container::part(bullet) {
+  @apply bg-white
+}
+swiper-container::part(bullet-active) {
+  @apply bg-white
+}
