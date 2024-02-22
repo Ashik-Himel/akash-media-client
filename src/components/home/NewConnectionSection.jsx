@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import tvBox from '../../assets/tv-box.png';
 import newIcon from '../../assets/new.png';
+import PropTypes from 'prop-types'
 
 
-export default function NewConnectionSection() {
+export default function NewConnectionSection({mt}) {
   return (
-    <section className="mt-12 lg:mt-16 bg-bg-color py-16">
+    <section className={`${mt} bg-bg-color py-16`}>
       <div className="container">
         <div className='flex flex-col-reverse md:flex-row justify-between md:items-center gap-8'>
           <div>
@@ -23,4 +24,8 @@ export default function NewConnectionSection() {
       </div>
     </section>
   );
+}
+
+NewConnectionSection.propTypes = {
+  mt: PropTypes.string
 }

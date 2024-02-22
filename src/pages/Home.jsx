@@ -18,7 +18,7 @@ export default function Home() {
       <QuickLinksSection />
       <WhatWeProvide />
       <PackagesSection />
-      <NewConnectionSection />
+      <NewConnectionSection mt='mt-12 lg:mt-16' />
       <FaqSection />
       <ContactUsSection />
     </main>

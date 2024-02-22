@@ -30,17 +30,21 @@ const PackageCard = ({
   );
 };
 
-export default function PackagesSection() {
+export default function PackagesSection({title = true}) {
   return (
     <section className="mt-12 lg:mt-16">
       <div className="container">
-        <h2 className="text-4xl font-semibold text-primary text-center mb-2">
-          Our Packages
-        </h2>
-        <p className="text-center w-full max-w-[550px] mx-auto mb-8">
-          We are providing you a discount in some packages. Choose a right
-          package for you and enjoy your time!
-        </p>
+        {
+          title && <>
+            <h2 className="text-4xl font-semibold text-primary text-center mb-2">
+              Our Packages
+            </h2>
+            <p className="text-center w-full max-w-[550px] mx-auto mb-8">
+              We are providing you a discount in some packages. Choose a right
+              package for you and enjoy your time!
+            </p>
+          </>
+        }
 
         <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 justify-center items-center gap-6">
           <PackageCard
@@ -71,6 +75,10 @@ export default function PackagesSection() {
       </div>
     </section>
   );
+}
+
+PackagesSection.propTypes = {
+  title: PropTypes.bool
 }
 
 PackageCard.propTypes = {

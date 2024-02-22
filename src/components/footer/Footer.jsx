@@ -10,7 +10,7 @@ export default function Footer() {
   if (pathname === "/login") return null;
 
   return (
-    <footer className="bg-bg-color mt-10">
+    <footer className="bg-bg-color mt-12 lg:mt-16">
       <div className="container">
         <div className="py-10 grid grid-cols-[auto] sm:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] gap-8 justify-between items-center">
           <div className="sm:col-span-2 lg:col-span-1">

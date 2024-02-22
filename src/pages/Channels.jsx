@@ -1,7 +1,14 @@
+import { Helmet } from "react-helmet-async";
+import HeaderBanner from "../components/shared/HeaderBanner";
+
 export default function Channels() {
   return (
-    <div>
-      <p>Channels component.</p>
-    </div>
+    <main>
+      <Helmet>
+        <title>Channels - Akash Media</title>
+      </Helmet>
+
+      <HeaderBanner text="Channel List" />
+    </main>
   );
 }
