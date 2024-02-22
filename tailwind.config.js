@@ -12,7 +12,11 @@ export default {
         '2xl': '6rem'
       }
     },
-    extend: {},
+    extend: {
+      colors: {
+        "bg-color": "#e9ebf4"
+      }
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
@@ -21,7 +25,7 @@ export default {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#263791",
-          secondary: "#f55b1f",
+          secondary: "#f55b1f"
         }
       }
     ]

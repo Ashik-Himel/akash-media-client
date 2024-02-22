@@ -11,7 +11,7 @@ const PackageCard = ({
 }) => {
   return (
     <div
-      className={`bg-[#E9EBF4] px-6 py-8 rounded-lg text-center ${classString}`}
+      className={`bg-bg-color px-6 py-8 rounded-lg text-center ${classString}`}
     >
       <span className="block text-primary font-bold uppercase mb-2">
         {name}

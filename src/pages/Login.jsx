@@ -31,7 +31,7 @@ export default function Login() {
       <section className="mt-6">
         <div className="container">
           <form
-            className="bg-[#E9EBF4] px-6 py-8 rounded-lg w-full max-w-[500px] mx-auto"
+            className="bg-bg-color px-6 py-8 rounded-lg w-full max-w-[500px] mx-auto"
             onSubmit={handleLogin}
           >
             <h2 className="text-3xl font-semibold text-primary text-center mb-6">

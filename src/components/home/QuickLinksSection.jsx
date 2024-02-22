@@ -11,7 +11,7 @@ const QuickLinkCard = ({ to, icon, altText, text }) => {
   return (
     <Link
       to={to}
-      className="bg-[#E9EBF4] p-4 rounded flex justify-start items-center gap-4"
+      className="bg-bg-color p-4 rounded flex justify-start items-center gap-4"
     >
       <img src={icon} alt={altText} className="w-8" />
       <span className="text-xl font-semibold">{text}</span>
