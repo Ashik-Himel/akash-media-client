@@ -1,6 +1,8 @@
-export default function FaqSection() {
+import PropTypes from 'prop-types'
+
+export default function FaqSection({faqRef}) {
   return (
-    <section className="mt-12 lg:mt-16">
+    <section className="mt-12 lg:mt-16" ref={faqRef}>
       <div className="container">
         <h2 className="text-4xl font-semibold text-primary text-center mb-2">
           Frequently Asked Questions (FAQ)
@@ -41,4 +43,8 @@ export default function FaqSection() {
       </div>
     </section>
   );
+}
+
+FaqSection.propTypes = {
+  faqRef: PropTypes.object
 }

@@ -1,20 +1,37 @@
+import PropTypes from 'prop-types'
 import contactImg from '../../assets/contact.png'
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
+import Swal from 'sweetalert2';
 
-export default function ContactUsSection() {
+export default function ContactUsSection({contactRef}) {
+  const form = useRef(null);
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    const form = e.target;
-    const name = form.name;
-    const email = form.email;
-    const subject = form.subject;
-    const message = form.message;
-
-    console.log(name, email, subject, message);
+    emailjs.sendForm("akash_media", "template_akash_media", form.current, "sSfKmZ_QCeyBKmoXJ")
+      .then(() => {
+        Swal.fire({
+          title: "Message Sent",
+          text: "Your message sent successfully!!!",
+          icon: "success",
+          color: "#263791"
+        })
+        e.target.reset();
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "Error",
+          text: error.text,
+          icon: "error",
+          color: "#263791"
+        })
+      })
   }
 
   return (
-    <section className="mt-12 lg:mt-16">
+    <section className="mt-12 lg:mt-16" ref={contactRef}>
       <div className="container">
         <h2 className="text-4xl font-semibold text-primary text-center mb-2">
           Contact Us
@@ -27,12 +44,15 @@ export default function ContactUsSection() {
           <div className='hidden md:block'>
             <img src={contactImg} alt="Contact Section Image" className='w-full max-w-[450px]' />
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={form}>
             <label htmlFor="name" className='block font-medium mb-2'>Name</label>
             <input className='input w-full border-2 border-bg-color mb-4' type="text" name="name" id="name" placeholder='Enter your name' required />
             
             <label htmlFor="email" className='block font-medium mb-2'>Email</label>
             <input className='input w-full border-2 border-bg-color mb-4' type="email" name="email" id="email" placeholder='Enter your email' required />
+
+            <label htmlFor="phone" className='block font-medium mb-2'>Phone Number</label>
+            <input className='input w-full border-2 border-bg-color mb-4' type="tel" name="phone" id="phone" placeholder='Enter your phone number' required />
 
             <label htmlFor="subject" className='block font-medium mb-2'>Subject</label>
             <input className='input w-full border-2 border-bg-color mb-4' type="text" name="subject" id="subject" placeholder='Enter the subject' required />
@@ -45,4 +65,8 @@ export default function ContactUsSection() {
       </div>
     </section>
   );
+}
+
+ContactUsSection.propTypes = {
+  contactRef: PropTypes.object
 }

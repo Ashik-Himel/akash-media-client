@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import tvBox from '../../assets/tv-box.png';
 import newIcon from '../../assets/new.png';
 import PropTypes from 'prop-types'
-
 
 export default function NewConnectionSection({mt}) {
   return (
@@ -15,7 +13,7 @@ export default function NewConnectionSection({mt}) {
             <h2 className='text-primary font-semibold text-3xl mb-4'>Akash Media TV Box</h2>
             <p className='max-w-[600px] mb-2'>You can enjoy 250+ channels with 70+ HD channels easily. Buy our tv box and choose a package. You are ready to enjoy our service.</p>
             <span className='block text-3xl font-semibold mb-6'>&#2547; 1800</span>
-            <Link to='/get-connection' className='btn btn-primary'>Buy Now</Link>
+            <a href="tel:+8801796775774" className='btn btn-primary'>Call for connection</a>
           </div>
           <div>
             <img src={tvBox} alt="TV Box" className='w-full max-w-[400px] md:mx-auto' />

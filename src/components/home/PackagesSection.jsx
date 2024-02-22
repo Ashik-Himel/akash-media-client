@@ -52,7 +52,7 @@ export default function PackagesSection({title = true}) {
             amount="400"
             duration="month"
             description="Buy monthly package and enjoy whole month !"
-            link="/recharge?amount=400"
+            // link="/recharge?amount=400"
             classString="sm:col-span-2 lg:col-span-1"
           />
           <PackageCard
@@ -60,7 +60,7 @@ export default function PackagesSection({title = true}) {
             amount="1100"
             duration="3 months"
             description="Get 100 taka discount in the 3 months' package!"
-            link="/recharge?amount=1100"
+            // link="/recharge?amount=1100"
             classString="sm:col-span-2 lg:col-span-1"
           />
           <PackageCard
@@ -68,7 +68,7 @@ export default function PackagesSection({title = true}) {
             amount="3200"
             duration="12 months"
             description="Get 400 taka discount in the 12 months' package!"
-            link="/recharge?amount=3200"
+            // link="/recharge?amount=3200"
             classString="sm:col-span-2 lg:col-span-1 sm:col-start-2 lg:col-start-3"
           />
         </div>

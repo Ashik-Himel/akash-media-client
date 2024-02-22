@@ -7,10 +7,11 @@ import packageIcon from "../../assets/icons/package.png";
 import rechargeIcon from "../../assets/icons/recharge.png";
 import channelsIcon from "../../assets/icons/tv.png";
 
-const QuickLinkCard = ({ to, icon, altText, text }) => {
+const QuickLinkCard = ({ to, onClick, icon, altText, text }) => {
   return (
     <Link
       to={to}
+      onClick={onClick}
       className="bg-bg-color p-4 rounded flex justify-start items-center gap-4"
     >
       <img src={icon} alt={altText} className="w-8" />
@@ -19,7 +20,14 @@ const QuickLinkCard = ({ to, icon, altText, text }) => {
   );
 };
 
-export default function QuickLinksSection() {
+export default function QuickLinksSection({faqRef, contactRef}) {
+  const sectionScroll = section => {
+    window.scrollTo({
+      top: section.current.offsetTop - 100,
+      behavior: "smooth"
+    })
+  }
+
   return (
     <section className="py-12 lg:py-16">
       <div className="container">
@@ -49,20 +57,30 @@ export default function QuickLinksSection() {
             text="Get a connection"
           />
           <QuickLinkCard
-            to=""
+            onClick={() => sectionScroll(contactRef)}
             icon={contactIcon}
             altText="Contact Icon"
             text="Contact Us"
           />
-          <QuickLinkCard to="" icon={faqIcon} altText="FAQ Icon" text="FAQ" />
+          <QuickLinkCard
+            onClick={() => sectionScroll(faqRef)}
+            icon={faqIcon}
+            altText="FAQ Icon"
+            text="FAQ" />
         </div>
       </div>
     </section>
   );
 }
 
+QuickLinksSection.propTypes = {
+  faqRef: PropTypes.object,
+  contactRef: PropTypes.object
+}
+
 QuickLinkCard.propTypes = {
   to: PropTypes.string,
+  onClick: PropTypes.func,
   icon: PropTypes.string,
   altText: PropTypes.string,
   text: PropTypes.string,

@@ -6,10 +6,20 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Header() {
   const [drawerShow, setDrawerShow] = useState(false);
+  const [headerShadow, setHeaderShadow] = useState(false);
   const drawerRef = useRef(null);
   const barRef = useRef(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 20) {
+        setHeaderShadow(true);
+      } else {
+        setHeaderShadow(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
     const handleDocumentClick = e => {
       if (barRef.current && !barRef.current?.contains(e.target)) {
         if (drawerRef.current && !drawerRef.current?.contains(e.target)) {
@@ -21,11 +31,12 @@ export default function Header() {
 
     return () => {
       document.removeEventListener('click', handleDocumentClick);
+      window.removeEventListener('scroll', handleScroll);
     }
   }, []);
 
   return (
-    <header>
+    <header className={`sticky top-0 bg-white z-40 transition-shadow duration-300 ${headerShadow ? '[box-shadow:0px_10px_50px_rgba(0,0,0,0.2)]' : ''}`}>
       <div className="container">
         <nav className='flex justify-between items-center gap-4 py-4'>
           <Link to='/'>

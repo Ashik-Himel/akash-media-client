@@ -6,8 +6,12 @@ import PackagesSection from "../components/home/PackagesSection";
 import NewConnectionSection from "../components/home/NewConnectionSection";
 import FaqSection from "../components/home/FaqSection";
 import ContactUsSection from "../components/home/ContactUsSection";
+import { useRef } from "react";
 
 export default function Home() {
+  const faqRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <main>
       <Helmet>
@@ -15,12 +19,12 @@ export default function Home() {
       </Helmet>
 
       <HomeSlider />
-      <QuickLinksSection />
+      <QuickLinksSection faqRef={faqRef} contactRef={contactRef} />
       <WhatWeProvide />
       <PackagesSection />
       <NewConnectionSection mt='mt-12 lg:mt-16' />
-      <FaqSection />
-      <ContactUsSection />
+      <FaqSection faqRef={faqRef} />
+      <ContactUsSection contactRef={contactRef} />
     </main>
   );
 }
