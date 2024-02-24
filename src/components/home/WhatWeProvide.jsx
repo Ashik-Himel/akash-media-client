@@ -23,7 +23,7 @@ export default function WhatWeProvide() {
         <p className='text-center w-full max-w-[550px] mx-auto mb-8'>We provide many interesting features with our services that will makes your experience better with Akash Media!</p>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6'>
-          <FeatureCard img={channelsIcon} text='100+ TV Channels' />
+          <FeatureCard img={channelsIcon} text='250+ TV Channels' />
           <FeatureCard img={videoIcon} text='Better Video Quality' />
           <FeatureCard img={audioIcon} text='Impressive Audio' />
           <FeatureCard img={packagesIcon} text='Promising Packages' />

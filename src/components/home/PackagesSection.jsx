@@ -49,26 +49,26 @@ export default function PackagesSection({title = true}) {
         <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 justify-center items-center gap-6">
           <PackageCard
             name="Regular"
-            amount="400"
+            amount="200"
             duration="month"
             description="Buy monthly package and enjoy whole month !"
-            // link="/recharge?amount=400"
+            // link="/recharge?amount=200"
             classString="sm:col-span-2 lg:col-span-1"
           />
           <PackageCard
             name="Intermediate"
-            amount="1100"
-            duration="3 months"
-            description="Get 100 taka discount in the 3 months' package!"
-            // link="/recharge?amount=1100"
+            amount="1000"
+            duration="6 months"
+            description="Get 200 taka discount in the 6 months' package!"
+            // link="/recharge?amount=1000"
             classString="sm:col-span-2 lg:col-span-1"
           />
           <PackageCard
             name="Advanced"
-            amount="3200"
+            amount="2000"
             duration="12 months"
             description="Get 400 taka discount in the 12 months' package!"
-            // link="/recharge?amount=3200"
+            // link="/recharge?amount=2000"
             classString="sm:col-span-2 lg:col-span-1 sm:col-start-2 lg:col-start-3"
           />
         </div>

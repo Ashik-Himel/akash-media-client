@@ -10,13 +10,14 @@ export default function ContactUsSection({contactRef}) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    emailjs.sendForm("akash_media", "template_akash_media", form.current, "sSfKmZ_QCeyBKmoXJ")
+
+    emailjs.sendForm("akash-media", "akash-media-template", form.current, "sSfKmZ_QCeyBKmoXJ")
       .then(() => {
         Swal.fire({
           title: "Message Sent",
           text: "Your message sent successfully!!!",
           icon: "success",
-          color: "#263791"
+          confirmButtonColor: '#263791'
         })
         e.target.reset();
       })
@@ -25,7 +26,7 @@ export default function ContactUsSection({contactRef}) {
           title: "Error",
           text: error.text,
           icon: "error",
-          color: "#263791"
+          confirmButtonColor: '#263791'
         })
       })
   }

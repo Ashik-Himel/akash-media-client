@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import brandLogo from "../../assets/akash-media.png";
 import facebookIcon from "../../assets/facebook.png";
-import instagramIcon from "../../assets/instagram.png";
 import whatsappIcon from "../../assets/whatsapp.png";
 
 export default function Footer() {
@@ -19,14 +18,13 @@ export default function Footer() {
               alt="Brand Logo"
               className="w-[120px] block mb-4"
             />
-            <p className="block mb-2 max-w-[350px]">
-              Akash Media is a company of Media Group. It provides digital
-              network services. It has 100+ TV channels with 60+ HD channels.
+            <p className="mb-2 max-w-[350px]">
+              Your entertainment is the top most priority to us. Keep connected with <a className="font-semibold inline-flex items-center gap-1" href="https://www.mediamax.com.bd" target="_blank" rel="noopener noreferrer">Media Group</a>.
             </p>
             <span className="block mb-6">
               <span className="font-semibold">Mobile:</span>{" "}
-              <a href="tel:+8801796775774" className="text-primary">
-                +8801796-775774
+              <a href="tel:+8801711322278" className="text-primary">
+                +8801711-322278
               </a>
             </span>
             <div className="flex items-center gap-6">
@@ -42,7 +40,7 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="https://wa.me/+8801796775774"
+                href="https://wa.me/+8801711322278"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,17 +48,6 @@ export default function Footer() {
                   src={whatsappIcon}
                   alt="WhatsApp Icon"
                   className="w-[35px]"
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={instagramIcon}
-                  alt="Instagram Icon"
-                  className="w-[30px]"
                 />
               </a>
             </div>
@@ -81,7 +68,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col items-start gap-2 font-medium">
               <a
-                href="https://wa.me/+8801796775774"
+                href="https://wa.me/+8801711322278"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -95,7 +82,7 @@ export default function Footer() {
                 Messenger
               </a>
               <a
-                href="mailto:support@mediamax.com.bd"
+                href="mailto:support@akashmedia.net"
                 target="_blank"
                 rel="noopener noreferrer"
               >
