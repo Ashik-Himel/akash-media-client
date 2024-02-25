@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Bangladesh Television (BTV)",
+    "displayName": "BTV",
+    "logo": "./channels/btv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 1
+  },
+  {
+    "name": "ATN Bangla",
+    "displayName": "ATN Bangla",
+    "logo": "./channels/atn.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 2
+  },
+  {
+    "name": "Bangla Vision",
+    "displayName": "Bangla Vision",
+    "logo": "./channels/banglavision-tv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 3
+  },
+  {
+    "name": "Bijoy TV",
+    "displayName": "Bijoy TV",
+    "logo": "./channels/bijoy-tv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 4
+  },
+  {
+    "name": "Channel 24",
+    "displayName": "Channel 24",
+    "logo": "./channels/channel24.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 5
+  },
+  {
+    "name": "Channel I",
+    "displayName": "Channel I",
+    "logo": "./channels/channel-i.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 6
+  },
+  {
+    "name": "DBC News",
+    "displayName": "DBC News",
+    "logo": "./channels/dbc.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 7
+  },
+  {
+    "name": "Ekushey Television (ETV)",
+    "displayName": "ETV",
+    "logo": "./channels/etv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 8
+  },
+  {
+    "name": "Independent Television",
+    "displayName": "Independent TV",
+    "logo": "./channels/independent-tv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 9
+  },
+  {
+    "name": "Nagorik TV",
+    "displayName": "Nagorik TV",
+    "logo": "./channels/nagorik-tv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 10
+  },
+  {
+    "name": "National Television (NTV)",
+    "displayName": "NTV",
+    "logo": "./channels/ntv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 11
+  },
+  {
+    "name": "RTV",
+    "displayName": "RTV",
+    "logo": "./channels/rtv.png",
+    "category": "bangla",
+    "hd": true,
+    "number": 12
+  }
+]

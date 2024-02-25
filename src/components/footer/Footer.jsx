@@ -1,13 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import brandLogo from "../../assets/akash-media.png";
 import facebookIcon from "../../assets/facebook.png";
 import whatsappIcon from "../../assets/whatsapp.png";
 
 export default function Footer() {
-  const { pathname } = useLocation();
-
-  if (pathname === "/login") return null;
-
   return (
     <footer className="bg-bg-color mt-12 lg:mt-16">
       <div className="container">
@@ -19,7 +15,7 @@ export default function Footer() {
               className="w-[120px] block mb-4"
             />
             <p className="mb-2 max-w-[350px]">
-              Your entertainment is the top most priority to us. Keep connected with <a className="font-semibold inline-flex items-center gap-1" href="https://www.mediamax.com.bd" target="_blank" rel="noopener noreferrer">Media Group</a>.
+              Your entertainment is the top most priority to us. Stay connected with <a className="font-semibold text-primary" href="https://www.mediamax.com.bd" target="_blank" rel="noopener noreferrer">Media Group</a>.
             </p>
             <span className="block mb-6">
               <span className="font-semibold">Mobile:</span>{" "}
@@ -29,7 +25,7 @@ export default function Footer() {
             </span>
             <div className="flex items-center gap-6">
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/media.group.2005"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +71,7 @@ export default function Footer() {
                 WhatsApp
               </a>
               <a
-                href="https://www.messenger.com/"
+                href="https://m.me/media.group.2005"
                 target="_blank"
                 rel="noopener noreferrer"
               >
