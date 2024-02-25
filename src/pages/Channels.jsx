@@ -10,7 +10,7 @@ export default function Channels() {
       </Helmet>
 
       <HeaderBanner text="Channel List" />
-      <ChannelsSection sectionHeading="Bangla" />
+      <ChannelsSection sectionHeading="Bangla" sectionMarginTop={true} />
       <ChannelsSection sectionHeading="Hindi Entertainment" />
       <ChannelsSection sectionHeading="Hindi Movies" />
       <ChannelsSection sectionHeading="English Movies" />
