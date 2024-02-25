@@ -3,7 +3,7 @@ import {MdSettingsRemote} from 'react-icons/md'
 
 export default function ChannelCard({channel}) {
   return (
-    <div className='w-full px-6 py-4 rounded-lg border border-primary relative'>
+    <div className='w-full p-4 rounded-lg border border-primary relative'>
       <div className='flex justify-between items-center gap-4 mb-4'>
         <span className='font-semibold text-primary flex justify-center items-center gap-1'>
           <MdSettingsRemote /> {channel?.number}
