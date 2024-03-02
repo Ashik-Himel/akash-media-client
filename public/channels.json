@@ -1,98 +1,1802 @@
 [
   {
-    "name": "Bangladesh Television (BTV)",
-    "displayName": "BTV",
-    "logo": "./channels/btv.png",
+    "name": "BTV National HD",
+    "displayName": "BTV HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/btv-hd.png",
     "category": "bangla",
-    "hd": true,
-    "number": 1
+    "serial": 100,
+    "hd": true
+  },
+  {
+    "name": "BTV National",
+    "displayName": "BTV",
+    "logo": "https://server.akashmedia.net/uploads/channels/btv.png",
+    "category": "bangla",
+    "serial": 101,
+    "hd": false
+  },
+  {
+    "name": "BTV World",
+    "displayName": "BTV World",
+    "logo": "https://server.akashmedia.net/uploads/channels/btv-world.png",
+    "category": "bangla",
+    "serial": 102,
+    "hd": false
+  },
+  {
+    "name": "Sangsad Bangladesh",
+    "displayName": "Sangsad Bangladesh",
+    "logo": "https://server.akashmedia.net/uploads/channels/sangsad.png",
+    "category": "bangla",
+    "serial": 103,
+    "hd": false
+  },
+  {
+    "name": "BTV Chattagram",
+    "displayName": "BTV Chattagram",
+    "logo": "https://server.akashmedia.net/uploads/channels/btv-chattagram.png",
+    "category": "bangla",
+    "serial": 104,
+    "hd": false
   },
   {
     "name": "ATN Bangla",
     "displayName": "ATN Bangla",
-    "logo": "./channels/atn.png",
+    "logo": "https://server.akashmedia.net/uploads/channels/atn.png",
     "category": "bangla",
-    "hd": true,
-    "number": 2
-  },
-  {
-    "name": "Bangla Vision",
-    "displayName": "Bangla Vision",
-    "logo": "./channels/banglavision-tv.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 3
-  },
-  {
-    "name": "Bijoy TV",
-    "displayName": "Bijoy TV",
-    "logo": "./channels/bijoy-tv.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 4
-  },
-  {
-    "name": "Channel 24",
-    "displayName": "Channel 24",
-    "logo": "./channels/channel24.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 5
+    "serial": 108,
+    "hd": true
   },
   {
     "name": "Channel I",
     "displayName": "Channel I",
-    "logo": "./channels/channel-i.png",
+    "logo": "https://server.akashmedia.net/uploads/channels/channel-i.png",
     "category": "bangla",
-    "hd": true,
-    "number": 6
+    "serial": 110,
+    "hd": true
   },
   {
-    "name": "DBC News",
-    "displayName": "DBC News",
-    "logo": "./channels/dbc.png",
+    "name": "Ekushey TV",
+    "displayName": "Ekushey TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/etv.png",
     "category": "bangla",
-    "hd": true,
-    "number": 7
+    "serial": 113,
+    "hd": false
   },
   {
-    "name": "Ekushey Television (ETV)",
-    "displayName": "ETV",
-    "logo": "./channels/etv.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 8
-  },
-  {
-    "name": "Independent Television",
-    "displayName": "Independent TV",
-    "logo": "./channels/independent-tv.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 9
-  },
-  {
-    "name": "Nagorik TV",
-    "displayName": "Nagorik TV",
-    "logo": "./channels/nagorik-tv.png",
-    "category": "bangla",
-    "hd": true,
-    "number": 10
-  },
-  {
-    "name": "National Television (NTV)",
+    "name": "NTV",
     "displayName": "NTV",
-    "logo": "./channels/ntv.png",
+    "logo": "https://server.akashmedia.net/uploads/channels/ntv.png",
     "category": "bangla",
-    "hd": true,
-    "number": 11
+    "serial": 115,
+    "hd": false
   },
   {
     "name": "RTV",
     "displayName": "RTV",
-    "logo": "./channels/rtv.png",
+    "logo": "https://server.akashmedia.net/uploads/channels/rtv.png",
     "category": "bangla",
-    "hd": true,
-    "number": 12
+    "serial": 117,
+    "hd": true
+  },
+  {
+    "name": "Boishakhi TV",
+    "displayName": "Boishakhi TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/boishakhi-tv.png",
+    "category": "bangla",
+    "serial": 118,
+    "hd": true
+  },
+  {
+    "name": "Bangla Vision",
+    "displayName": "Bangla Vision",
+    "logo": "https://server.akashmedia.net/uploads/channels/banglavision.png",
+    "category": "bangla",
+    "serial": 120,
+    "hd": true
+  },
+  {
+    "name": "Desh TV",
+    "displayName": "Desh TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/desh-tv.png",
+    "category": "bangla",
+    "serial": 123,
+    "hd": true
+  },
+  {
+    "name": "Bijoy TV",
+    "displayName": "Bijoy TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/bijoy-tv.png",
+    "category": "bangla",
+    "serial": 124,
+    "hd": true
+  },
+  {
+    "name": "MY TV",
+    "displayName": "MY TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/my-tv.png",
+    "category": "bangla",
+    "serial": 125,
+    "hd": true
+  },
+  {
+    "name": "ATN News",
+    "displayName": "ATN News",
+    "logo": "https://server.akashmedia.net/uploads/channels/atn-news.png",
+    "category": "bangla",
+    "serial": 126,
+    "hd": true
+  },
+  {
+    "name": "Mohona TV",
+    "displayName": "Mohona TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/mohona-tv.png",
+    "category": "bangla",
+    "serial": 128,
+    "hd": true
+  },
+  {
+    "name": "Somoy News",
+    "displayName": "Somoy News",
+    "logo": "https://server.akashmedia.net/uploads/channels/somoy-news.png",
+    "category": "bangla",
+    "serial": 130,
+    "hd": true
+  },
+  {
+    "name": "Independent TV",
+    "displayName": "Independent TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/independent-tv.png",
+    "category": "bangla",
+    "serial": 131,
+    "hd": false
+  },
+  {
+    "name": "Masranga TV",
+    "displayName": "Masranga TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/masranga.png",
+    "category": "bangla",
+    "serial": 132,
+    "hd": false
+  },
+  {
+    "name": "Channel 9",
+    "displayName": "Channel 9",
+    "logo": "https://server.akashmedia.net/uploads/channels/channel9.png",
+    "category": "bangla",
+    "serial": 133,
+    "hd": true
+  },
+  {
+    "name": "Channel 24",
+    "displayName": "Channel 24",
+    "logo": "https://server.akashmedia.net/uploads/channels/channel24.png",
+    "category": "bangla",
+    "serial": 135,
+    "hd": true
+  },
+  {
+    "name": "Gazi TV",
+    "displayName": "GTV",
+    "logo": "https://server.akashmedia.net/uploads/channels/gtv.png",
+    "category": "bangla",
+    "serial": 137,
+    "hd": false
+  },
+  {
+    "name": "Gazi TV HD",
+    "displayName": "GTV HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/gtv-hd.png",
+    "category": "bangla",
+    "serial": 138,
+    "hd": true
+  },
+  {
+    "name": "Ekattor TV",
+    "displayName": "Ekattor TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/ekattor-tv.png",
+    "category": "bangla",
+    "serial": 140,
+    "hd": true
+  },
+  {
+    "name": "Asian TV",
+    "displayName": "Asian TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/asian-tv.png",
+    "category": "bangla",
+    "serial": 141,
+    "hd": true
+  },
+  {
+    "name": "SA TV",
+    "displayName": "SA TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/sa-tv.png",
+    "category": "bangla",
+    "serial": 142,
+    "hd": true
+  },
+  {
+    "name": "Gaan Bangla TV",
+    "displayName": "Gaan Bangla TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/gaanbangla-tv.png",
+    "category": "bangla",
+    "serial": 144,
+    "hd": true
+  },
+  {
+    "name": "Jamuna TV",
+    "displayName": "Jamuna TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/jamuna-tv.png",
+    "category": "bangla",
+    "serial": 146,
+    "hd": false
+  },
+  {
+    "name": "Deepto TV",
+    "displayName": "Deepto TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/deepto-tv.png",
+    "category": "bangla",
+    "serial": 147,
+    "hd": true
+  },
+  {
+    "name": "DBC News",
+    "displayName": "DBC News",
+    "logo": "https://server.akashmedia.net/uploads/channels/dbc.png",
+    "category": "bangla",
+    "serial": 149,
+    "hd": true
+  },
+  {
+    "name": "News 24",
+    "displayName": "News 24",
+    "logo": "https://server.akashmedia.net/uploads/channels/news24.png",
+    "category": "bangla",
+    "serial": 150,
+    "hd": true
+  },
+  {
+    "name": "Bangla TV",
+    "displayName": "Bangla TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/bangla-tv.png",
+    "category": "bangla",
+    "serial": 152,
+    "hd": true
+  },
+  {
+    "name": "Duronto TV",
+    "displayName": "Duronto TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/duronto-tv.png",
+    "category": "bangla",
+    "serial": 154,
+    "hd": true
+  },
+  {
+    "name": "Nagorik TV",
+    "displayName": "Nagorik TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/nagorik-tv.png",
+    "category": "bangla",
+    "serial": 155,
+    "hd": false
+  },
+  {
+    "name": "Anondo TV",
+    "displayName": "Anondo TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/ananda-tv.png",
+    "category": "bangla",
+    "serial": 158,
+    "hd": false
+  },
+  {
+    "name": "Nexus TV",
+    "displayName": "Nexus TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/nexus-tv.png",
+    "category": "bangla",
+    "serial": 159,
+    "hd": false
+  },
+  {
+    "name": "Green TV",
+    "displayName": "Green TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/green-tv.png",
+    "category": "bangla",
+    "serial": 160,
+    "hd": false
+  },
+  {
+    "name": "Star Jalsa",
+    "displayName": "Star Jalsa",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-jalsa.png",
+    "category": "bangla",
+    "serial": 166,
+    "hd": false
+  },
+  {
+    "name": "Star Jalsa HD",
+    "displayName": "Star Jalsa HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-jalsa-hd.png",
+    "category": "bangla",
+    "serial": 168,
+    "hd": true
+  },
+  {
+    "name": "Zee Bangla",
+    "displayName": "Zee Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-bangla.png",
+    "category": "bangla",
+    "serial": 170,
+    "hd": false
+  },
+  {
+    "name": "Zee Bangla HD",
+    "displayName": "Zee Bangla HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-bangla-hd.png",
+    "category": "bangla",
+    "serial": 171,
+    "hd": true
+  },
+  {
+    "name": "Colors Bangla",
+    "displayName": "Colors Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors-bangla.png",
+    "category": "bangla",
+    "serial": 173,
+    "hd": false
+  },
+  {
+    "name": "Colors Bangla HD",
+    "displayName": "Colors Bangla HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors-bangla-hd.png",
+    "category": "bangla",
+    "serial": 174,
+    "hd": true
+  },
+  {
+    "name": "Sony AATH",
+    "displayName": "Sony AATH",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-aath.png",
+    "category": "bangla",
+    "serial": 179,
+    "hd": false
+  },
+  {
+    "name": "Sony AATH HD",
+    "displayName": "Sony AATH HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-aath-hd.png",
+    "category": "bangla",
+    "serial": 177,
+    "hd": true
+  },
+  {
+    "name": "Colors Bangla Cinema",
+    "displayName": "Colors Bangla Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors-bangla-cinema.png",
+    "category": "bangla",
+    "serial": 180,
+    "hd": false
+  },
+  {
+    "name": "Sun Bangla",
+    "displayName": "Sun Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/sun-bangla.png",
+    "category": "bangla",
+    "serial": 182,
+    "hd": false
+  },
+  {
+    "name": "Jalsha Movies",
+    "displayName": "Jalsha Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/jalsha-movies.png",
+    "category": "bangla",
+    "serial": 187,
+    "hd": false
+  },
+  {
+    "name": "Jalsha Movies HD",
+    "displayName": "Jalsha Movies HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/jalsha-movies-hd.png",
+    "category": "bangla",
+    "serial": 188,
+    "hd": true
+  },
+  {
+    "name": "ETV Cinema",
+    "displayName": "ETV Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/etv-cinema.png",
+    "category": "bangla",
+    "serial": 189,
+    "hd": true
+  },
+  {
+    "name": "Sanonda Cinema",
+    "displayName": "Sanonda Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/sanonda-cinema.png",
+    "category": "bangla",
+    "serial": 191,
+    "hd": true
+  },
+  {
+    "name": "Ruposhi Bangla",
+    "displayName": "Ruposhi Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/ruposhi-bangla.png",
+    "category": "bangla",
+    "serial": 193,
+    "hd": false
+  },
+  {
+    "name": "Aakash AATH",
+    "displayName": "Aakash AATH",
+    "logo": "https://server.akashmedia.net/uploads/channels/aakash-aath.png",
+    "category": "bangla",
+    "serial": 196,
+    "hd": false
+  },
+  {
+    "name": "Enterr 10 Bangla",
+    "displayName": "Enterr 10 Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/enterr10bangla.png",
+    "category": "bangla",
+    "serial": 198,
+    "hd": false
+  },
+  {
+    "name": "Khushboo Bangla",
+    "displayName": "Khushboo Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/khushboo-bangla.png",
+    "category": "bangla",
+    "serial": 201,
+    "hd": false
+  },
+  {
+    "name": "R Plus Gold",
+    "displayName": "R Plus Gold",
+    "logo": "https://server.akashmedia.net/uploads/channels/r-plus-gold.png",
+    "category": "bangla",
+    "serial": 202,
+    "hd": false
+  },
+  {
+    "name": "Rongeen TV",
+    "displayName": "Rongeen TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/rongeen-tv.png",
+    "category": "bangla",
+    "serial": 204,
+    "hd": false
+  },
+  {
+    "name": "DD Bangla",
+    "displayName": "DD Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/dd-bangla.png",
+    "category": "bangla",
+    "serial": 205,
+    "hd": false
+  },
+  {
+    "name": "Zee 24 Ghanta",
+    "displayName": "Zee 24 Ghanta",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee24ghanta.png",
+    "category": "bangla",
+    "serial": 208,
+    "hd": false
+  },
+  {
+    "name": "Kolkata TV",
+    "displayName": "Kolkata TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/kolkata-tv.png",
+    "category": "bangla",
+    "serial": 210,
+    "hd": false
+  },
+  {
+    "name": "R Plus",
+    "displayName": "R Plus",
+    "logo": "https://server.akashmedia.net/uploads/channels/r-plus.png",
+    "category": "bangla",
+    "serial": 211,
+    "hd": false
+  },
+  {
+    "name": "TV9 Bangla",
+    "displayName": "TV9 Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/tv9bangla.png",
+    "category": "bangla",
+    "serial": 213,
+    "hd": false
+  },
+  {
+    "name": "Star Ananda",
+    "displayName": "Star Ananda",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-ananda.png",
+    "category": "bangla",
+    "serial": 215,
+    "hd": false
+  },
+  {
+    "name": "Movie Channel",
+    "displayName": "Movie Channel",
+    "logo": "https://server.akashmedia.net/uploads/channels/movie-channel.png",
+    "category": "bangla",
+    "serial": 216,
+    "hd": false
+  },
+  {
+    "name": "Bangla Movie",
+    "displayName": "Bangla Movie",
+    "logo": "https://server.akashmedia.net/uploads/channels/bangla-movie.png",
+    "category": "bangla",
+    "serial": 217,
+    "hd": false
+  },
+  {
+    "name": "Movie Bangla",
+    "displayName": "Movie Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/movie-bangla.png",
+    "category": "bangla",
+    "serial": 220,
+    "hd": false
+  },
+  {
+    "name": "Zoom Bangla",
+    "displayName": "Zoom Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/zoom-bangla.png",
+    "category": "bangla",
+    "serial": 221,
+    "hd": false
+  },
+  {
+    "name": "Star Cinema",
+    "displayName": "Star Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-cinema.png",
+    "category": "bangla",
+    "serial": 223,
+    "hd": false
+  },
+  {
+    "name": "Sony Bangla",
+    "displayName": "Sony Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-bangla.png",
+    "category": "bangla",
+    "serial": 225,
+    "hd": false
+  },
+  {
+    "name": "Star Plus",
+    "displayName": "Star Plus",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-plus.png",
+    "category": "hindi entertainment",
+    "serial": 240,
+    "hd": true
+  },
+  {
+    "name": "Sony Entertainment",
+    "displayName": "Sony Entertainment",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-entertainment.png",
+    "category": "hindi entertainment",
+    "serial": 242,
+    "hd": false
+  },
+  {
+    "name": "Sony",
+    "displayName": "Sony",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony.png",
+    "category": "hindi entertainment",
+    "serial": 243,
+    "hd": true
+  },
+  {
+    "name": "Zee TV",
+    "displayName": "Zee TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-tv.png",
+    "category": "hindi entertainment",
+    "serial": 245,
+    "hd": false
+  },
+  {
+    "name": "Colors",
+    "displayName": "Colors",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors.png",
+    "category": "hindi entertainment",
+    "serial": 247,
+    "hd": false
+  },
+  {
+    "name": "Colors HD",
+    "displayName": "Colors HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors-hd.png",
+    "category": "hindi entertainment",
+    "serial": 248,
+    "hd": true
+  },
+  {
+    "name": "& TV",
+    "displayName": "& TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/and-tv.png",
+    "category": "hindi entertainment",
+    "serial": 250,
+    "hd": false
+  },
+  {
+    "name": "Sony Sab",
+    "displayName": "Sony Sab",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-sab.png",
+    "category": "hindi entertainment",
+    "serial": 252,
+    "hd": false
+  },
+  {
+    "name": "ARY Zindagi",
+    "displayName": "ARY Zindagi",
+    "logo": "https://server.akashmedia.net/uploads/channels/ary-zindagi.png",
+    "category": "hindi entertainment",
+    "serial": 255,
+    "hd": false
+  },
+  {
+    "name": "Hum Sitaray",
+    "displayName": "Hum Sitaray",
+    "logo": "https://server.akashmedia.net/uploads/channels/hum-sitaray.png",
+    "category": "hindi entertainment",
+    "serial": 259,
+    "hd": false
+  },
+  {
+    "name": "Hum Pashto 1",
+    "displayName": "Hum Pashto 1",
+    "logo": "https://server.akashmedia.net/uploads/channels/hum-pashto-1.png",
+    "category": "hindi entertainment",
+    "serial": 261,
+    "hd": false
+  },
+  {
+    "name": "Shemaroo TV",
+    "displayName": "Shemaroo TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/shemaroo-tv.png",
+    "category": "hindi entertainment",
+    "serial": 263,
+    "hd": false
+  },
+  {
+    "name": "Kashish TV",
+    "displayName": "Kashish TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/kashish-tv.png",
+    "category": "hindi entertainment",
+    "serial": 265,
+    "hd": false
+  },
+  {
+    "name": "DD National",
+    "displayName": "DD National",
+    "logo": "https://server.akashmedia.net/uploads/channels/dd-national.png",
+    "category": "hindi entertainment",
+    "serial": 267,
+    "hd": false
+  },
+  {
+    "name": "DD Urdu",
+    "displayName": "DD Urdu",
+    "logo": "https://server.akashmedia.net/uploads/channels/dd-urdu.png",
+    "category": "hindi entertainment",
+    "serial": 269,
+    "hd": false
+  },
+  {
+    "name": "Sony Max",
+    "displayName": "Sony Max",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-max.png",
+    "category": "hindi movies",
+    "serial": 280,
+    "hd": false
+  },
+  {
+    "name": "Sony Max",
+    "displayName": "Sony Max",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-max-hd.png",
+    "category": "hindi movies",
+    "serial": 281,
+    "hd": true
+  },
+  {
+    "name": "Zee Cinema",
+    "displayName": "Zee Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-cinema.png",
+    "category": "hindi movies",
+    "serial": 282,
+    "hd": false
+  },
+  {
+    "name": "Star Gold",
+    "displayName": "Star Gold",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-gold.png",
+    "category": "hindi movies",
+    "serial": 285,
+    "hd": true
+  },
+  {
+    "name": "& Pictures",
+    "displayName": "& Pictures",
+    "logo": "https://server.akashmedia.net/uploads/channels/and-pictures.png",
+    "category": "hindi movies",
+    "serial": 287,
+    "hd": false
+  },
+  {
+    "name": "Sony Max 2",
+    "displayName": "Sony Max 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-max-2.png",
+    "category": "hindi movies",
+    "serial": 289,
+    "hd": false
+  },
+  {
+    "name": "Zee Bollywood",
+    "displayName": "Zee Bollywood",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-bollywood.png",
+    "category": "hindi movies",
+    "serial": 291,
+    "hd": false
+  },
+  {
+    "name": "Sony Wah",
+    "displayName": "Sony Wah",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-wah.png",
+    "category": "hindi movies",
+    "serial": 292,
+    "hd": false
+  },
+  {
+    "name": "Sony Action",
+    "displayName": "Sony Action",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-action.png",
+    "category": "hindi movies",
+    "serial": 293,
+    "hd": false
+  },
+  {
+    "name": "UTV Pictures",
+    "displayName": "UTV Pictures",
+    "logo": "https://server.akashmedia.net/uploads/channels/utv.png",
+    "category": "hindi movies",
+    "serial": 299,
+    "hd": true
+  },
+  {
+    "name": "Star Gold Thrills",
+    "displayName": "Star Gold Thrills",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-gold-thrills.png",
+    "category": "hindi movies",
+    "serial": 302,
+    "hd": false
+  },
+  {
+    "name": "B4U Movies",
+    "displayName": "B4U Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/b4u-movies.png",
+    "category": "hindi movies",
+    "serial": 303,
+    "hd": false
+  },
+  {
+    "name": "Raapchik",
+    "displayName": "Raapchik",
+    "logo": "https://server.akashmedia.net/uploads/channels/raapchik.png",
+    "category": "hindi movies",
+    "serial": 305,
+    "hd": false
+  },
+  {
+    "name": "Manoranjan Movies ",
+    "displayName": "Manoranjan Movies ",
+    "logo": "https://server.akashmedia.net/uploads/channels/manoranjan-movies.png",
+    "category": "hindi movies",
+    "serial": 306,
+    "hd": false
+  },
+  {
+    "name": "Ganguar",
+    "displayName": "Ganguar",
+    "logo": "https://server.akashmedia.net/uploads/channels/ganguar.png",
+    "category": "hindi movies",
+    "serial": 308,
+    "hd": false
+  },
+  {
+    "name": "Firangi",
+    "displayName": "Firangi",
+    "logo": "https://server.akashmedia.net/uploads/channels/firangi.png",
+    "category": "hindi movies",
+    "serial": 310,
+    "hd": false
+  },
+  {
+    "name": "Dhamaka Movies",
+    "displayName": "Dhamaka Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/dhamaka-movies.png",
+    "category": "hindi movies",
+    "serial": 312,
+    "hd": false
+  },
+  {
+    "name": "Movie Plus",
+    "displayName": "Movie Plus",
+    "logo": "https://server.akashmedia.net/uploads/channels/movie-plus.png",
+    "category": "hindi movies",
+    "serial": 313,
+    "hd": false
+  },
+  {
+    "name": "B4U Kadak",
+    "displayName": "B4U Kadak",
+    "logo": "https://server.akashmedia.net/uploads/channels/b4u-kadak.png",
+    "category": "hindi movies",
+    "serial": 315,
+    "hd": false
+  },
+  {
+    "name": "Dangaal",
+    "displayName": "Dangaal",
+    "logo": "https://server.akashmedia.net/uploads/channels/dangaal.png",
+    "category": "hindi movies",
+    "serial": 317,
+    "hd": false
+  },
+  {
+    "name": "Dangaal 2",
+    "displayName": "Dangaal 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/dangaal-2.png",
+    "category": "hindi movies",
+    "serial": 318,
+    "hd": false
+  },
+  {
+    "name": "Manoranjan Grand",
+    "displayName": "Manoranjan Grand",
+    "logo": "https://server.akashmedia.net/uploads/channels/manoranjan-grand.png",
+    "category": "hindi movies",
+    "serial": 320,
+    "hd": false
+  },
+  {
+    "name": "Goldmines Movies",
+    "displayName": "Goldmines Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/goldmines-movies.png",
+    "category": "hindi movies",
+    "serial": 322,
+    "hd": false
+  },
+  {
+    "name": "Goldmines Bollywood",
+    "displayName": "Goldmines Bollywood",
+    "logo": "https://server.akashmedia.net/uploads/channels/goldmines-bollywood.png",
+    "category": "hindi movies",
+    "serial": 324,
+    "hd": false
+  },
+  {
+    "name": "Goldmines",
+    "displayName": "Goldmines",
+    "logo": "https://server.akashmedia.net/uploads/channels/goldmines.png",
+    "category": "hindi movies",
+    "serial": 325,
+    "hd": false
+  },
+  {
+    "name": "Dhinchaak",
+    "displayName": "Dhinchaak",
+    "logo": "https://server.akashmedia.net/uploads/channels/dhinchaak.png",
+    "category": "hindi movies",
+    "serial": 326,
+    "hd": false
+  },
+  {
+    "name": "Oscar Movies Bhojpuri", 
+    "displayName": "Oscar Movies Bhojpuri",
+    "logo": "https://server.akashmedia.net/uploads/channels/oscar-movies-bhojpuri.png",
+    "category": "hindi movies",
+    "serial": 327,
+    "hd": false
+  },
+  {
+    "name": "Rishtey Cineplex",
+    "displayName": "Rishtey Cineplex",
+    "logo": "https://server.akashmedia.net/uploads/channels/rishtey-cineplex.png",
+    "category": "hindi movies",
+    "serial": 328,
+    "hd": false
+  },
+  {
+    "name": "Sahara Filmy",
+    "displayName": "Sahara Filmy",
+    "logo": "https://server.akashmedia.net/uploads/channels/sahara-filmy.png",
+    "category": "hindi movies",
+    "serial": 330,
+    "hd": false
+  },
+  {
+    "name": "Bhojpuri Cinema",
+    "displayName": "Bhojpuri Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/bhojpuri-cinema.png",
+    "category": "hindi movies",
+    "serial": 331,
+    "hd": false
+  },
+  {
+    "name": "B4U Bhojpuri",
+    "displayName": "B4U Bhojpuri",
+    "logo": "https://server.akashmedia.net/uploads/channels/b4u-bhojpuri.png",
+    "category": "hindi movies",
+    "serial": 332,
+    "hd": false
+  },
+  {
+    "name": "Tabbar Hits",
+    "displayName": "Tabbar Hits",
+    "logo": "https://server.akashmedia.net/uploads/channels/tabbar-hits.png",
+    "category": "hindi movies",
+    "serial": 334,
+    "hd": false
+  },
+  {
+    "name": "Zee Anmol Cinema",
+    "displayName": "Zee Anmol Cinema",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-anmol-cinema.png",
+    "category": "hindi movies",
+    "serial": 335,
+    "hd": false
+  },
+  {
+    "name": "Enterr 10",
+    "displayName": "Enterr 10",
+    "logo": "https://server.akashmedia.net/uploads/channels/enterr-10.png",
+    "category": "hindi movies",
+    "serial": 337,
+    "hd": false
+  },
+  {
+    "name": "Pitaara",
+    "displayName": "Pitaara",
+    "logo": "https://server.akashmedia.net/uploads/channels/pitaara.png",
+    "category": "hindi movies",
+    "serial": 339,
+    "hd": false
+  },
+  {
+    "name": "PTC Punjabi Gold",
+    "displayName": "PTC Punjabi Gold",
+    "logo": "https://server.akashmedia.net/uploads/channels/ptc-punjabi-gold.png",
+    "category": "hindi movies",
+    "serial": 341,
+    "hd": false
+  },
+  {
+    "name": "Star Utshav Movies",
+    "displayName": "Star Utshav Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-utshav-movies.png",
+    "category": "hindi movies",
+    "serial": 342,
+    "hd": false
+  },
+  {
+    "name": "Star Movies",
+    "displayName": "Star Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-movies.png",
+    "category": "english movies",
+    "serial": 350,
+    "hd": true
+  },
+  {
+    "name": "HBO",
+    "displayName": "HBO",
+    "logo": "https://server.akashmedia.net/uploads/channels/hbo.png",
+    "category": "english movies",
+    "serial": 352,
+    "hd": true
+  },
+  {
+    "name": "HBO Hits",
+    "displayName": "HBO Hits",
+    "logo": "https://server.akashmedia.net/uploads/channels/hbo-hits.png",
+    "category": "english movies",
+    "serial": 354,
+    "hd": true
+  },
+  {
+    "name": "HBO Family",
+    "displayName": "HBO Family",
+    "logo": "https://server.akashmedia.net/uploads/channels/hbo-family.png",
+    "category": "english movies",
+    "serial": 357,
+    "hd": false
+  },
+  {
+    "name": "HBO Signature",
+    "displayName": "HBO Signature",
+    "logo": "https://server.akashmedia.net/uploads/channels/hbo-signature.png",
+    "category": "english movies",
+    "serial": 360,
+    "hd": false
+  },
+  {
+    "name": "Cinemax",
+    "displayName": "Cinemax",
+    "logo": "https://server.akashmedia.net/uploads/channels/cinemax.png",
+    "category": "english movies",
+    "serial": 362,
+    "hd": true
+  },
+  {
+    "name": "Fox Action Movies",
+    "displayName": "Fox Action Movies",
+    "logo": "https://server.akashmedia.net/uploads/channels/fox-action-movies.png",
+    "category": "english movies",
+    "serial": 365,
+    "hd": true
+  },
+  {
+    "name": "Universal",
+    "displayName": "Universal",
+    "logo": "https://server.akashmedia.net/uploads/channels/universal.png",
+    "category": "english movies",
+    "serial": 367,
+    "hd": true
+  },
+  {
+    "name": "Hollywood",
+    "displayName": "Hollywood",
+    "logo": "https://server.akashmedia.net/uploads/channels/hollywood.png",
+    "category": "english movies",
+    "serial": 370,
+    "hd": true
+  },
+  {
+    "name": "MBC 2",
+    "displayName": "MBC 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/mbc-2.png",
+    "category": "english movies",
+    "serial": 371,
+    "hd": true
+  },
+  {
+    "name": "Cine Plus Premier",
+    "displayName": "Cine Plus Premier",
+    "logo": "https://server.akashmedia.net/uploads/channels/cine-plus-premier.png",
+    "category": "english movies",
+    "serial": 373,
+    "hd": true
+  },
+  {
+    "name": "Hall Mark",
+    "displayName": "Hall Mark",
+    "logo": "https://server.akashmedia.net/uploads/channels/hall-mark.png",
+    "category": "english movies",
+    "serial": 375,
+    "hd": true
+  },
+  {
+    "name": "Web Series",
+    "displayName": "Web Series",
+    "logo": "https://server.akashmedia.net/uploads/channels/web-series.png",
+    "category": "english movies",
+    "serial": 377,
+    "hd": true
+  },
+  {
+    "name": "Sony Pix",
+    "displayName": "Sony Pix",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-pix.png",
+    "category": "english movies",
+    "serial": 378,
+    "hd": false
+  },
+  {
+    "name": "AXN",
+    "displayName": "AXN",
+    "logo": "https://server.akashmedia.net/uploads/channels/axn.png",
+    "category": "english movies",
+    "serial": 380,
+    "hd": false
+  },
+  {
+    "name": "Lotus Macau",
+    "displayName": "Lotus Macau",
+    "logo": "https://server.akashmedia.net/uploads/channels/lotus-macau.png",
+    "category": "english movies",
+    "serial": 382,
+    "hd": true
+  },
+  {
+    "name": "Colors Infinity",
+    "displayName": "Colors Infinity",
+    "logo": "https://server.akashmedia.net/uploads/channels/colors-infinity.png",
+    "category": "english movies",
+    "serial": 385,
+    "hd": false
+  },
+  {
+    "name": "TV5 Monde",
+    "displayName": "TV5 Monde",
+    "logo": "https://server.akashmedia.net/uploads/channels/tv5-monde.png",
+    "category": "english movies",
+    "serial": 386,
+    "hd": false
+  },
+  {
+    "name": "Hi Dost",
+    "displayName": "Hi Dost",
+    "logo": "https://server.akashmedia.net/uploads/channels/hi-dost.png",
+    "category": "english movies",
+    "serial": 388,
+    "hd": false
+  },
+  {
+    "name": "Comedy Central",
+    "displayName": "Comedy Central",
+    "logo": "https://server.akashmedia.net/uploads/channels/comedy-central.png",
+    "category": "english movies",
+    "serial": 389,
+    "hd": false
+  },
+  {
+    "name": "Zee Café",
+    "displayName": "Zee Café",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-cafe.png",
+    "category": "english movies",
+    "serial": 390,
+    "hd": false
+  },
+  {
+    "name": "Xing Kong International", 
+    "displayName": "Xing Kong International",
+    "logo": "https://server.akashmedia.net/uploads/channels/xing-kong-international.png",
+    "category": "english movies",
+    "serial": 395,
+    "hd": false
+  },
+  {
+    "name": "T Sports HD",
+    "displayName": "T Sports HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/t-sports-hd.png",
+    "category": "sports",
+    "serial": 400,
+    "hd": true
+  },
+  {
+    "name": "T Sports",
+    "displayName": "T Sports",
+    "logo": "https://server.akashmedia.net/uploads/channels/t-sports.png",
+    "category": "sports",
+    "serial": 401,
+    "hd": false
+  },
+  {
+    "name": "Star Sports 1",
+    "displayName": "Star Sports 1",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-sports-1.png",
+    "category": "sports",
+    "serial": 402,
+    "hd": true
+  },
+  {
+    "name": "Star Sports 2",
+    "displayName": "Star Sports 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-sports-2.png",
+    "category": "sports",
+    "serial": 404,
+    "hd": true
+  },
+  {
+    "name": "Star Sports Select 1",
+    "displayName": "Star Sports Select 1",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-sports-select-1.png",
+    "category": "sports",
+    "serial": 407,
+    "hd": true
+  },
+  {
+    "name": "Star Sports Select 2",
+    "displayName": "Star Sports Select 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/star-sports-select-2.png",
+    "category": "sports",
+    "serial": 410,
+    "hd": true
+  },
+  {
+    "name": "Sony Sports 1",
+    "displayName": "Sony Sports 1",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-sports-1.png",
+    "category": "sports",
+    "serial": 411,
+    "hd": false
+  },
+  {
+    "name": "Sony Sports 2",
+    "displayName": "Sony Sports 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-sports-2.png",
+    "category": "sports",
+    "serial": 413,
+    "hd": false
+  },
+  {
+    "name": "Sony Sports 3",
+    "displayName": "Sony Sports 3",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-sports-3.png",
+    "category": "sports",
+    "serial": 415,
+    "hd": false
+  },
+  {
+    "name": "Sony Sports 5",
+    "displayName": "Sony Sports 5",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-sports-5.png",
+    "category": "sports",
+    "serial": 418,
+    "hd": false
+  },
+  {
+    "name": "beIN Sports 2",
+    "displayName": "beIN Sports 2",
+    "logo": "https://server.akashmedia.net/uploads/channels/bein-sports-2.png",
+    "category": "sports",
+    "serial": 419,
+    "hd": true
+  },
+  {
+    "name": "Sports 18",
+    "displayName": "Sports 18",
+    "logo": "https://server.akashmedia.net/uploads/channels/sports-18.png",
+    "category": "sports",
+    "serial": 420,
+    "hd": true
+  },
+  {
+    "name": "PTV Sports",
+    "displayName": "PTV Sports",
+    "logo": "https://server.akashmedia.net/uploads/channels/ptv-sports.png",
+    "category": "sports",
+    "serial": 423,
+    "hd": false
+  },
+  {
+    "name": "Skynet Sports",
+    "displayName": "Skynet Sports",
+    "logo": "https://server.akashmedia.net/uploads/channels/skynet-sports.png",
+    "category": "sports",
+    "serial": 425,
+    "hd": false
+  },
+  {
+    "name": "Euro Sports",
+    "displayName": "Euro Sports",
+    "logo": "https://server.akashmedia.net/uploads/channels/euro-sports.png",
+    "category": "sports",
+    "serial": 426,
+    "hd": false
+  },
+  {
+    "name": "Super Sports Cricket",
+    "displayName": "Super Sports Cricket",
+    "logo": "https://server.akashmedia.net/uploads/channels/super-sports-cricket.png",
+    "category": "sports",
+    "serial": 428,
+    "hd": false
+  },
+  {
+    "name": "Super Premier",
+    "displayName": "Super Premier",
+    "logo": "https://server.akashmedia.net/uploads/channels/super-premier.png",
+    "category": "sports",
+    "serial": 430,
+    "hd": false
+  },
+  {
+    "name": "Sangeet Bangla",
+    "displayName": "Sangeet Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/sangeet-bangla.png",
+    "category": "music",
+    "serial": 445,
+    "hd": false
+  },
+  {
+    "name": "Dhoom Music",
+    "displayName": "Dhoom Music",
+    "logo": "https://server.akashmedia.net/uploads/channels/dhoom-music.png",
+    "category": "music",
+    "serial": 448,
+    "hd": false
+  },
+  {
+    "name": "MTV",
+    "displayName": "MTV",
+    "logo": "https://server.akashmedia.net/uploads/channels/mtv.png",
+    "category": "music",
+    "serial": 451,
+    "hd": false
+  },
+  {
+    "name": "MTV Beats",
+    "displayName": "MTV Beats",
+    "logo": "https://server.akashmedia.net/uploads/channels/mtv-beats.png",
+    "category": "music",
+    "serial": 453,
+    "hd": false
+  },
+  {
+    "name": "9XM",
+    "displayName": "9XM",
+    "logo": "https://server.akashmedia.net/uploads/channels/9xm.png",
+    "category": "music",
+    "serial": 456,
+    "hd": false
+  },
+  {
+    "name": "9X Jalwa",
+    "displayName": "9X Jalwa",
+    "logo": "https://server.akashmedia.net/uploads/channels/9x-jalwa.png",
+    "category": "music",
+    "serial": 458,
+    "hd": false
+  },
+  {
+    "name": "B4U Music",
+    "displayName": "B4U Music",
+    "logo": "https://server.akashmedia.net/uploads/channels/b4u-music.png",
+    "category": "music",
+    "serial": 460,
+    "hd": false
+  },
+  {
+    "name": "Music India",
+    "displayName": "Music India",
+    "logo": "https://server.akashmedia.net/uploads/channels/music-india.png",
+    "category": "music",
+    "serial": 462,
+    "hd": false
+  },
+  {
+    "name": "I Love",
+    "displayName": "I Love",
+    "logo": "https://server.akashmedia.net/uploads/channels/i-love.png",
+    "category": "music",
+    "serial": 464,
+    "hd": false
+  },
+  {
+    "name": "E24",
+    "displayName": "E24",
+    "logo": "https://server.akashmedia.net/uploads/channels/e24.png",
+    "category": "music",
+    "serial": 466,
+    "hd": false
+  },
+  {
+    "name": "VH1",
+    "displayName": "VH1",
+    "logo": "https://server.akashmedia.net/uploads/channels/vh1.png",
+    "category": "music",
+    "serial": 469,
+    "hd": false
+  },
+  {
+    "name": "Trace Urban",
+    "displayName": "Trace Urban",
+    "logo": "https://server.akashmedia.net/uploads/channels/trace-urban.png",
+    "category": "music",
+    "serial": 470,
+    "hd": true
+  },
+  {
+    "name": "Zing Asia",
+    "displayName": "Zing Asia",
+    "logo": "https://server.akashmedia.net/uploads/channels/zing-asia.png",
+    "category": "music",
+    "serial": 475,
+    "hd": false
+  },
+  {
+    "name": "ARY Music",
+    "displayName": "ARY Music",
+    "logo": "https://server.akashmedia.net/uploads/channels/ary-music.png",
+    "category": "music",
+    "serial": 476,
+    "hd": false
+  },
+  {
+    "name": "Sangeet Bhojpuri",
+    "displayName": "Sangeet Bhojpuri",
+    "logo": "https://server.akashmedia.net/uploads/channels/sangeet-bhojpuri.png",
+    "category": "music",
+    "serial": 479,
+    "hd": false
+  },
+  {
+    "name": "Balle Balle Music",
+    "displayName": "Balle Balle Music",
+    "logo": "https://server.akashmedia.net/uploads/channels/balle-balle-music.png",
+    "category": "music",
+    "serial": 480,
+    "hd": false
+  },
+  {
+    "name": "PTC Music",
+    "displayName": "PTC Music",
+    "logo": "https://server.akashmedia.net/uploads/channels/ptc-music.png",
+    "category": "music",
+    "serial": 483,
+    "hd": false
+  },
+  {
+    "name": "PTC Chak De",
+    "displayName": "PTC Chak De",
+    "logo": "https://server.akashmedia.net/uploads/channels/ptc-chakde.png",
+    "category": "music",
+    "serial": 484,
+    "hd": false
+  },
+  {
+    "name": "9X Jhakaas",
+    "displayName": "9X Jhakaas",
+    "logo": "https://server.akashmedia.net/uploads/channels/9x-jhakaas.png",
+    "category": "music",
+    "serial": 488,
+    "hd": false
+  },
+  {
+    "name": "Channel V China",
+    "displayName": "Channel V China",
+    "logo": "https://server.akashmedia.net/uploads/channels/channel-v-china.png",
+    "category": "music",
+    "serial": 495,
+    "hd": false
+  },
+  {
+    "name": "Mastii",
+    "displayName": "Mastii",
+    "logo": "https://server.akashmedia.net/uploads/channels/mastii.png",
+    "category": "music",
+    "serial": 11312,
+    "hd": false
+  },
+  {
+    "name": "Cartoon Network",
+    "displayName": "Cartoon Network",
+    "logo": "https://server.akashmedia.net/uploads/channels/cartoon-network.png",
+    "category": "kids",
+    "serial": 502,
+    "hd": true
+  },
+  {
+    "name": "Nickelodeon",
+    "displayName": "Nickelodeon",
+    "logo": "https://server.akashmedia.net/uploads/channels/nickelodeon.png",
+    "category": "kids",
+    "serial": 504,
+    "hd": false
+  },
+  {
+    "name": "Nick Junior",
+    "displayName": "Nick Junior",
+    "logo": "https://server.akashmedia.net/uploads/channels/nick-junior.png",
+    "category": "kids",
+    "serial": 506,
+    "hd": false
+  },
+  {
+    "name": "Nick +",
+    "displayName": "Nick +",
+    "logo": "https://server.akashmedia.net/uploads/channels/nick-plus.png",
+    "category": "kids",
+    "serial": 508,
+    "hd": true
+  },
+  {
+    "name": "Sony YAY",
+    "displayName": "Sony YAY",
+    "logo": "https://server.akashmedia.net/uploads/channels/sony-yay.png",
+    "category": "kids",
+    "serial": 510,
+    "hd": false
+  },
+  {
+    "name": "Sonic",
+    "displayName": "Sonic",
+    "logo": "https://server.akashmedia.net/uploads/channels/sonic.png",
+    "category": "kids",
+    "serial": 520,
+    "hd": false
+  },
+  {
+    "name": "Discovery",
+    "displayName": "Discovery",
+    "logo": "https://server.akashmedia.net/uploads/channels/discovery.png",
+    "category": "infotainment",
+    "serial": 450,
+    "hd": false
+  },
+  {
+    "name": "Discovery HD",
+    "displayName": "Discovery HD",
+    "logo": "https://server.akashmedia.net/uploads/channels/discovery-hd.png",
+    "category": "infotainment",
+    "serial": 530,
+    "hd": true
+  },
+  {
+    "name": "Animal Planet",
+    "displayName": "Animal Planet",
+    "logo": "https://server.akashmedia.net/uploads/channels/animal-planet.png",
+    "category": "infotainment",
+    "serial": 532,
+    "hd": true
+  },
+  {
+    "name": "National Geography",
+    "displayName": "National Geography",
+    "logo": "https://server.akashmedia.net/uploads/channels/national-geographic.png",
+    "category": "infotainment",
+    "serial": 534,
+    "hd": true
+  },
+  {
+    "name": "NAT GEO Wild",
+    "displayName": "NAT GEO Wild",
+    "logo": "https://server.akashmedia.net/uploads/channels/nat-geo-wild.png",
+    "category": "infotainment",
+    "serial": 536,
+    "hd": true
+  },
+  {
+    "name": "Love Nature",
+    "displayName": "Love Nature",
+    "logo": "https://server.akashmedia.net/uploads/channels/love-nature.png",
+    "category": "infotainment",
+    "serial": 538,
+    "hd": true
+  },
+  {
+    "name": "BBC Earth",
+    "displayName": "BBC Earth",
+    "logo": "https://server.akashmedia.net/uploads/channels/bbc-earth.png",
+    "category": "infotainment",
+    "serial": 540,
+    "hd": false
+  },
+  {
+    "name": "Foxlife",
+    "displayName": "Foxlife",
+    "logo": "https://server.akashmedia.net/uploads/channels/fox-life.png",
+    "category": "infotainment",
+    "serial": 542,
+    "hd": true
+  },
+  {
+    "name": "Travel XP",
+    "displayName": "Travel XP",
+    "logo": "https://server.akashmedia.net/uploads/channels/travel-xp.png",
+    "category": "infotainment",
+    "serial": 545,
+    "hd": false
+  },
+  {
+    "name": "History TV",
+    "displayName": "History TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/history-tv.png",
+    "category": "infotainment",
+    "serial": 547,
+    "hd": false
+  },
+  {
+    "name": "CGTN Documentary",
+    "displayName": "CGTN Documentary",
+    "logo": "https://server.akashmedia.net/uploads/channels/cgtn-documentary.png",
+    "category": "infotainment",
+    "serial": 549,
+    "hd": false
+  },
+  {
+    "name": "BBC World",
+    "displayName": "BBC World",
+    "logo": "https://server.akashmedia.net/uploads/channels/bbc-world.png",
+    "category": "news",
+    "serial": 560,
+    "hd": false
+  },
+  {
+    "name": "AL Jazeera",
+    "displayName": "AL Jazeera",
+    "logo": "https://server.akashmedia.net/uploads/channels/al-jazeera.png",
+    "category": "news",
+    "serial": 562,
+    "hd": false
+  },
+  {
+    "name": "Sky News",
+    "displayName": "Sky News",
+    "logo": "https://server.akashmedia.net/uploads/channels/sky-news.png",
+    "category": "news",
+    "serial": 564,
+    "hd": false
+  },
+  {
+    "name": "France 24",
+    "displayName": "France 24",
+    "logo": "https://server.akashmedia.net/uploads/channels/france-24.png",
+    "category": "news",
+    "serial": 567,
+    "hd": false
+  },
+  {
+    "name": "DW News",
+    "displayName": "DW News",
+    "logo": "https://server.akashmedia.net/uploads/channels/dw-news.png",
+    "category": "news",
+    "serial": 569,
+    "hd": false
+  },
+  {
+    "name": "CGTN News",
+    "displayName": "CGTN News",
+    "logo": "https://server.akashmedia.net/uploads/channels/cgtn-news.png",
+    "category": "news",
+    "serial": 570,
+    "hd": false
+  },
+  {
+    "name": "Zee News",
+    "displayName": "Zee News",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-news.png",
+    "category": "news",
+    "serial": 578,
+    "hd": false
+  },
+  {
+    "name": "Zee Up",
+    "displayName": "Zee Up",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-up.png",
+    "category": "news",
+    "serial": 580,
+    "hd": false
+  },
+  {
+    "name": "NDTV India",
+    "displayName": "NDTV India",
+    "logo": "https://server.akashmedia.net/uploads/channels/ndtv-india.png",
+    "category": "news",
+    "serial": 582,
+    "hd": false
+  },
+  {
+    "name": "Zee Bharat",
+    "displayName": "Zee Bharat",
+    "logo": "https://server.akashmedia.net/uploads/channels/zee-bharat.png",
+    "category": "news",
+    "serial": 585,
+    "hd": false
+  },
+  {
+    "name": "AAJ Tak",
+    "displayName": "AAJ Tak",
+    "logo": "https://server.akashmedia.net/uploads/channels/aaj-tak.png",
+    "category": "news",
+    "serial": 586,
+    "hd": false
+  },
+  {
+    "name": "ARY News",
+    "displayName": "ARY News",
+    "logo": "https://server.akashmedia.net/uploads/channels/ary-news.png",
+    "category": "news",
+    "serial": 590,
+    "hd": false
+  },
+  {
+    "name": "DD News",
+    "displayName": "DD News",
+    "logo": "https://server.akashmedia.net/uploads/channels/dd-news.png",
+    "category": "news",
+    "serial": 592,
+    "hd": false
+  },
+  {
+    "name": "Madani Channel Bangla",
+    "displayName": "Madani Channel Bangla",
+    "logo": "https://server.akashmedia.net/uploads/channels/madani-channel-bangla.png",
+    "category": "islamic",
+    "serial": 600,
+    "hd": true
+  },
+  {
+    "name": "Saudi Quran",
+    "displayName": "Saudi Quran",
+    "logo": "https://server.akashmedia.net/uploads/channels/saudi-quran.png",
+    "category": "islamic",
+    "serial": 605,
+    "hd": false
+  },
+  {
+    "name": "Saudi Sunnah",
+    "displayName": "Saudi Sunnah",
+    "logo": "https://server.akashmedia.net/uploads/channels/saudi-sunnah.png",
+    "category": "islamic",
+    "serial": 607,
+    "hd": false
+  },
+  {
+    "name": "Channel Win",
+    "displayName": "Channel Win",
+    "logo": "https://server.akashmedia.net/uploads/channels/channel-win.png",
+    "category": "islamic",
+    "serial": 610,
+    "hd": false
+  },
+  {
+    "name": "ARY Q TV",
+    "displayName": "ARY Q TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/ary-q-tv.png",
+    "category": "islamic",
+    "serial": 612,
+    "hd": false
+  },
+  {
+    "name": "Tehzeeb TV",
+    "displayName": "Tehzeeb TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/tahzeeb-tv.png",
+    "category": "islamic",
+    "serial": 615,
+    "hd": false
+  },
+  {
+    "name": "Dubai TV",
+    "displayName": "Dubai TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/dubai-tv.png",
+    "category": "international",
+    "serial": 630,
+    "hd": false
+  },
+  {
+    "name": "Kuwait TV",
+    "displayName": "Kuwait TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/kuwait-tv.png",
+    "category": "international",
+    "serial": 632,
+    "hd": false
+  },
+  {
+    "name": "Sudan TV",
+    "displayName": "Sudan TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/sudan-tv.png",
+    "category": "international",
+    "serial": 638,
+    "hd": false
+  },
+  {
+    "name": "Sharjah TV",
+    "displayName": "Sharjah TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/sharjah-tv.png",
+    "category": "international",
+    "serial": 640,
+    "hd": false
+  },
+  {
+    "name": "FTV",
+    "displayName": "FTV",
+    "logo": "https://server.akashmedia.net/uploads/channels/ftv.png",
+    "category": "international",
+    "serial": 642,
+    "hd": true
+  },
+  {
+    "name": "FTB SD",
+    "displayName": "FTB SD",
+    "logo": "https://server.akashmedia.net/uploads/channels/ftb-sd.png",
+    "category": "international",
+    "serial": 643,
+    "hd": false
+  },
+  {
+    "name": "Saam TV",
+    "displayName": "Saam TV",
+    "logo": "https://server.akashmedia.net/uploads/channels/saam-tv.png",
+    "category": "international",
+    "serial": 645,
+    "hd": false
   }
 ]
