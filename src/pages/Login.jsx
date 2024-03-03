@@ -28,6 +28,16 @@ export default function Login() {
     <main>
       <Helmet>
         <title>Login - Akash Media</title>
+        <meta name="description" content="This is Akash Media's login page. Existing user can login and use our services from our platform." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Login - Akash Media" />
+        <meta property="og:description" content="This is Akash Media's login page. Existing user can login and use our services from our platform." />
+        <meta property="og:image" content="https://akashmedia.net/assets/akash-media-YAYuS5Eg.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.akashmedia.net/login" />
       </Helmet>
 
       <HeaderBanner text='Login' />

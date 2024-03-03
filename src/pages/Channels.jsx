@@ -10,7 +10,7 @@ export default function Channels() {
   const axiosPublic = useAxiosPublic();
   const [searchText, setSearchText] = useState('');
 
-  const {data: channels = [], refetch} = useQuery({
+  const {data: channels = [], isLoading, refetch} = useQuery({
     queryKey: ['channels', searchText],
     queryFn: async() => {
       const res = await axiosPublic(`/channels?search=${searchText}`);
@@ -27,6 +27,16 @@ export default function Channels() {
     <main>
       <Helmet>
         <title>Channels - Akash Media</title>
+        <meta name="description" content="We have 250+ channels with 80+ hd channels in various types of packages in a competitive prices." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Channels - Akash Media" />
+        <meta property="og:description" content="We have 250+ channels with 80+ hd channels in various types of packages in a competitive prices." />
+        <meta property="og:image" content="https://akashmedia.net/assets/akash-media-YAYuS5Eg.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.akashmedia.net/channels" />
       </Helmet>
 
       <HeaderBanner text="Channel List" />
@@ -38,9 +48,15 @@ export default function Channels() {
         </div>
       </div>
 
+      {
+        isLoading && <div className="my-12 text-center">
+          <span className="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+      }
+
       <ChannelsSection sectionHeading="Bangla" channels={channels?.filter(channel => channel?.category == "bangla")} />
       <ChannelsSection sectionHeading="Hindi Entertainment" channels={channels?.filter(channel => channel?.category == "hindi entertainment")} />
-      <ChannelsSection channels={channels?.filter(channel => channel?.category == "hindi movies")} />
+      <ChannelsSection sectionHeading="Hindi Movies" channels={channels?.filter(channel => channel?.category == "hindi movies")} />
       <ChannelsSection sectionHeading="English Movies" channels={channels?.filter(channel => channel?.category == "english movies")} />
       <ChannelsSection sectionHeading="Sports" channels={channels?.filter(channel => channel?.category == "sports")} />
       <ChannelsSection sectionHeading="Music" channels={channels?.filter(channel => channel?.category == "music")} />
