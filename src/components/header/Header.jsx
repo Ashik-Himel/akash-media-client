@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container">
         <nav className='flex justify-between items-center gap-4 py-4'>
           <Link to='/'>
-            <img src={brandLogo} alt="Brand Logo" className='w-[100px]' />
+            <img src={brandLogo} alt="Brand Logo" className='w-[80px]' />
           </Link>
 
           <ul className='font-medium uppercase gap-6 hidden lg:flex justify-center items-center'>
@@ -63,7 +63,7 @@ export default function Header() {
             </li>
             {
               userLoaded ? user ? <li>
-                <Link to='/dashboard' className='btn btn-primary'>Dashboard</Link>
+                <Link to='/stream' className='btn btn-primary'>Stream Now</Link>
               </li> : <li>
                 <Link to='/login' className='btn btn-primary'>Login</Link>
               </li> : <li className='btn btn-primary'>
@@ -75,7 +75,7 @@ export default function Header() {
           <div className='flex justify-center items-center gap-4 lg:hidden'>
             <div>
               {
-                userLoaded ? user ? <Link to='/dashboard' className='btn btn-primary'>Dashboard</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
+                userLoaded ? user ? <Link to='/stream' className='btn btn-primary'>Stream Now</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
                   <span className="loading loading-spinner loading-md"></span>
                 </div>
               }

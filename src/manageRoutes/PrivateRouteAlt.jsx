@@ -13,7 +13,7 @@ export default function PrivateRouteAlt({children}) {
   );
 
   if (user) return (
-    <Navigate to={state?.prevPath ? state?.prevPath : '/'} />
+    <Navigate to={state?.prevPath ? state?.prevPath : '/stream'} />
   );
 
   return children;

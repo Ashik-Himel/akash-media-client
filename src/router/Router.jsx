@@ -8,6 +8,10 @@ import Login from "../pages/Login";
 import Packages from "../pages/Packages";
 import GetConnection from "../pages/GetConnection";
 import PrivateRouteAlt from "../manageRoutes/PrivateRouteAlt";
+import StreamLayout from "../layout/StreamLayout";
+import StreamHome from "../pages/stream/StreamHome";
+import PrivateRoute from "../manageRoutes/PrivateRoute";
+import StreamProfile from "../pages/stream/StreamProfile";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +42,21 @@ export const router = createBrowserRouter([
       {
         path: '/login',
         element: <PrivateRouteAlt><Login /></PrivateRouteAlt>
+      }
+    ]
+  },
+  {
+    path: '/stream',
+    element: <PrivateRoute><StreamLayout /></PrivateRoute>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/stream',
+        element: <StreamHome />
+      },
+      {
+        path: '/stream/profile',
+        element: <StreamProfile />
       }
     ]
   }

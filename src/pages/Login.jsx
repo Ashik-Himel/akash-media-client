@@ -109,7 +109,7 @@ export default function Login() {
                 Verification Code
               </label>
               <div className="relative">
-                <input className="input w-full" type="number" name="code" id="code" placeholder="Enter verification code" required onChange={e => {
+                <input className="input w-full" type="number" name="code" id="code" placeholder="Enter code" required onChange={e => {
                   setCode(e.target.value);
                   setErrorMsg("");
                 }} />

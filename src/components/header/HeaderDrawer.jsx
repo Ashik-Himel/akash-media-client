@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { GoPackage } from "react-icons/go";
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaFilm } from 'react-icons/fa';
 import { FaArrowRight, FaXmark } from 'react-icons/fa6';
 import {IoHomeSharp} from 'react-icons/io5';
 import {PiTelevision} from 'react-icons/pi';
-import {MdLogin, MdOutlineElectricBolt, MdDashboard} from 'react-icons/md';
+import {MdLogin, MdOutlineElectricBolt} from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import useAllContext from '../../hooks/useAllContext';
 
@@ -50,9 +50,9 @@ export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
             <FaArrowRight />
           </NavLink>
           {
-            user ? <NavLink to='/dashboard' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+            user ? <NavLink to='/stream' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
               <div className="flex items-center gap-4">
-                <MdDashboard className="text-xl" /> Dashboard
+                <FaFilm className="text-xl" /> Stream Now
               </div>
               <FaArrowRight />
             </NavLink> : <NavLink to='/login' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
