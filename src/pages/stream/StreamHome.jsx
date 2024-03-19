@@ -25,7 +25,7 @@ export default function StreamHome() {
 
       <section className="mt-6">
         <div className="container">
-          <iframe id="channel-frame" className="w-full max-w-[900px] aspect-video" src="http://103.161.226.101:8009/TEST_CHANNEL/embed.html" allowFullScreen ></iframe>
+          <iframe id="channel-frame" className="w-full max-w-[900px] aspect-video" src="https://103.161.226.101:8009/TEST_CHANNEL/embed.html" allowFullScreen ></iframe>
         </div>
       </section>
     </main>
