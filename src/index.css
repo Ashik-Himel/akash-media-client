@@ -23,3 +23,7 @@ swiper-container::part(bullet) {
 swiper-container::part(bullet-active) {
   @apply bg-white
 }
+
+.react-tel-input .form-control {
+  @apply input !w-full !h-[50px] !text-base;
+}

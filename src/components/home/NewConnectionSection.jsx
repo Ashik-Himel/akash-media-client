@@ -16,7 +16,7 @@ export default function NewConnectionSection({mt}) {
             <a href="tel:+8801711322278" className='btn btn-primary'>Call for connection</a>
           </div>
           <div>
-            <img src={tvBox} alt="TV Box" className='w-full max-w-[400px] md:mx-auto' />
+            <img src={tvBox} alt="TV Box" className='w-full max-w-[450px] md:mx-auto' />
           </div>
         </div>
       </div>

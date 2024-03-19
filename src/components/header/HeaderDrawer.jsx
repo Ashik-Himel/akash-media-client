@@ -4,10 +4,13 @@ import { FaPlus } from 'react-icons/fa';
 import { FaArrowRight, FaXmark } from 'react-icons/fa6';
 import {IoHomeSharp} from 'react-icons/io5';
 import {PiTelevision} from 'react-icons/pi';
-import {MdLogin, MdOutlineElectricBolt} from 'react-icons/md';
+import {MdLogin, MdOutlineElectricBolt, MdDashboard} from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import useAllContext from '../../hooks/useAllContext';
 
 export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
+  const {user} = useAllContext();
+
   return (
     <div className={`py-8 px-6 lg:hidden fixed top-0 bottom-0 w-4/5 max-w-[300px] bg-secondary text-white transition-[left] duration-300 z-50 ${drawerShow ? 'left-0' : '-left-[350px]'}`} ref={drawerRef}>
       <div>
@@ -46,12 +49,19 @@ export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
             </div>
             <FaArrowRight />
           </NavLink>
-          <NavLink to='/login' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
-            <div className="flex items-center gap-4">
-              <MdLogin className="text-xl" /> Login
-            </div>
-            <FaArrowRight />
-          </NavLink>
+          {
+            user ? <NavLink to='/dashboard' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+              <div className="flex items-center gap-4">
+                <MdDashboard className="text-xl" /> Dashboard
+              </div>
+              <FaArrowRight />
+            </NavLink> : <NavLink to='/login' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
+              <div className="flex items-center gap-4">
+                <MdLogin className="text-xl" /> Login
+              </div>
+              <FaArrowRight />
+            </NavLink>
+          }
         </div>
       </div>
     </div>

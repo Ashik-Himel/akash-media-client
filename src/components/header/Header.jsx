@@ -3,8 +3,10 @@ import {FaBars} from 'react-icons/fa6';
 import brandLogo from '../../assets/akash-media.png';
 import HeaderDrawer from './HeaderDrawer';
 import { useEffect, useRef, useState } from 'react';
+import useAllContext from '../../hooks/useAllContext';
 
 export default function Header() {
+  const {user, userLoaded} = useAllContext();
   const [drawerShow, setDrawerShow] = useState(false);
   const [headerShadow, setHeaderShadow] = useState(false);
   const drawerRef = useRef(null);
@@ -59,14 +61,24 @@ export default function Header() {
             <li>
               <NavLink to='/get-connection' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Get a connection</NavLink>
             </li>
-            <li>
-              <Link to='/login' className='btn btn-primary'>Login</Link>
-            </li>
+            {
+              userLoaded ? user ? <li>
+                <Link to='/dashboard' className='btn btn-primary'>Dashboard</Link>
+              </li> : <li>
+                <Link to='/login' className='btn btn-primary'>Login</Link>
+              </li> : <li className='btn btn-primary'>
+                <span className="loading loading-spinner loading-md"></span>
+              </li>
+            }
           </ul>
 
           <div className='flex justify-center items-center gap-4 lg:hidden'>
             <div>
-              <Link to='/login' className='btn btn-primary'>Login</Link>
+              {
+                userLoaded ? user ? <Link to='/dashboard' className='btn btn-primary'>Dashboard</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
+                  <span className="loading loading-spinner loading-md"></span>
+                </div>
+              }
             </div>
             <div className='text-2xl cursor-pointer select-none' onClick={() => setDrawerShow(!drawerShow)} ref={barRef}>
               <FaBars />

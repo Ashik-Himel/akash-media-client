@@ -7,6 +7,7 @@ import Recharge from "../pages/Recharge";
 import Login from "../pages/Login";
 import Packages from "../pages/Packages";
 import GetConnection from "../pages/GetConnection";
+import PrivateRouteAlt from "../manageRoutes/PrivateRouteAlt";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login />
+        element: <PrivateRouteAlt><Login /></PrivateRouteAlt>
       }
     ]
   }
