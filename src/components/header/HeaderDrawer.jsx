@@ -12,7 +12,7 @@ export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
   const {user} = useAllContext();
 
   return (
-    <div className={`py-8 px-6 lg:hidden fixed top-0 bottom-0 w-4/5 max-w-[300px] bg-secondary text-white transition-[left] duration-300 z-50 ${drawerShow ? 'left-0' : '-left-[350px]'}`} ref={drawerRef}>
+    <div className={`py-8 px-6 lg:hidden fixed top-0 bottom-0 w-4/5 max-w-[300px] bg-primary text-white transition-[left] duration-300 z-50 ${drawerShow ? 'left-0' : '-left-[350px]'}`} ref={drawerRef}>
       <div>
         <div className="flex justify-between items-center mb-4">
           <h4 className="text-[18px] uppercase font-medium">Menu</h4>

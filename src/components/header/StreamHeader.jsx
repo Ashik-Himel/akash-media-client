@@ -6,6 +6,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
 import brandLogo from '../../assets/akash-media.png';
 import ProfilePic from '../../assets/profile-pic.png';
+import Swal from 'sweetalert2';
 
 export default function StreamHeader() {
   const {user} = useAllContext();
@@ -16,7 +17,13 @@ export default function StreamHeader() {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        window.alert("Logout Successful!");
+        Swal.fire({
+          title: "Successful",
+          text: "Logout Successful!",
+          icon: "success",
+          iconColor: "#263791",
+          confirmButtonColor: "#263791"
+        })
       })
   }
 

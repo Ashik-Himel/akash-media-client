@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import HeaderBanner from "../components/shared/HeaderBanner";
-import PackagesSection from "../components/home/PackagesSection";
+import SetTopBoxPackages from "../components/home/SetTopBoxPackages";
+import OnlineStreamPackages from "../components/home/OnlineStreamPackages";
 
 export default function Packages() {
   return (
@@ -20,7 +21,8 @@ export default function Packages() {
       </Helmet>
 
       <HeaderBanner text="All Packages" />
-      <PackagesSection title={false} />
+      <OnlineStreamPackages />
+      <SetTopBoxPackages />
     </main>
   );
 }

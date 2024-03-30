@@ -7,6 +7,7 @@ import { auth } from "../firebase/firebase.config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useState } from "react";
 import useAllContext from "../hooks/useAllContext";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const {setUser} = useAllContext();
@@ -45,7 +46,13 @@ export default function Login() {
   const handleLogin = () => {
     window.confirmationResult.confirm(code)
       .then((result) => {
-        window.alert("Login Successful!");
+        Swal.fire({
+          title: "Successful",
+          text: "Login Successful!",
+          icon: "success",
+          iconColor: "#263791",
+          confirmButtonColor: "#263791"
+        })
         setUser(result.user);
       }).catch(() => {
         setErrorMsg("Login Failed!")

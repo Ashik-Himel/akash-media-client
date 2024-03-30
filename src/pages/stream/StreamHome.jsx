@@ -1,11 +1,6 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 export default function StreamHome() {
-  useEffect(() => {
-    const frameVideo = document.querySelector("#channel-frame #document");
-    console.log(frameVideo)
-  }, []);
 
   return (
     <main>

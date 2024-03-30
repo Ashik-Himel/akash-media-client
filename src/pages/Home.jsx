@@ -2,11 +2,12 @@ import { Helmet } from "react-helmet-async";
 import HomeSlider from "../components/home/HomeSlider";
 import QuickLinksSection from "../components/home/QuickLinksSection";
 import WhatWeProvide from "../components/home/WhatWeProvide";
-import PackagesSection from "../components/home/PackagesSection";
 import NewConnectionSection from "../components/home/NewConnectionSection";
 import FaqSection from "../components/home/FaqSection";
 import ContactUsSection from "../components/home/ContactUsSection";
 import { useRef } from "react";
+import SetTopBoxPackages from "../components/home/SetTopBoxPackages";
+import OnlineStreamPackages from "../components/home/OnlineStreamPackages";
 
 export default function Home() {
   const faqRef = useRef(null);
@@ -31,8 +32,9 @@ export default function Home() {
       <HomeSlider />
       <QuickLinksSection faqRef={faqRef} contactRef={contactRef} />
       <WhatWeProvide />
-      <PackagesSection />
+      <OnlineStreamPackages />
       <NewConnectionSection mt='mt-12 lg:mt-16' />
+      <SetTopBoxPackages />
       <FaqSection faqRef={faqRef} />
       <ContactUsSection contactRef={contactRef} />
     </main>
