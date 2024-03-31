@@ -12,6 +12,7 @@ import StreamLayout from "../layout/StreamLayout";
 import StreamHome from "../pages/stream/StreamHome";
 import PrivateRoute from "../manageRoutes/PrivateRoute";
 import StreamProfile from "../pages/stream/StreamProfile";
+import Register from "../pages/Register";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: '/login',
         element: <PrivateRouteAlt><Login /></PrivateRouteAlt>
+      },
+      {
+        path: '/register',
+        element: <PrivateRouteAlt><Register /></PrivateRouteAlt>
       }
     ]
   },

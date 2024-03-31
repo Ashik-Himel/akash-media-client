@@ -52,7 +52,7 @@ export default function HeaderDrawer({drawerShow, setDrawerShow, drawerRef}) {
           {
             user ? <NavLink to='/stream' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>
               <div className="flex items-center gap-4">
-                <FaFilm className="text-xl" /> Stream Now
+                <FaFilm className="text-xl" /> Stream
               </div>
               <FaArrowRight />
             </NavLink> : <NavLink to='/login' className="flex justify-between items-center py-2 rounded-lg" onClick={() => setDrawerShow(false)}>

@@ -63,7 +63,7 @@ export default function Header() {
             </li>
             {
               userLoaded ? user ? <li>
-                <Link to='/stream' className='btn btn-primary'>Stream Now</Link>
+                <Link to='/stream' className='btn btn-primary'>Stream</Link>
               </li> : <li>
                 <Link to='/login' className='btn btn-primary'>Login</Link>
               </li> : <li className='btn btn-primary'>
@@ -75,7 +75,7 @@ export default function Header() {
           <div className='flex justify-center items-center gap-4 lg:hidden'>
             <div>
               {
-                userLoaded ? user ? <Link to='/stream' className='btn btn-primary'>Stream Now</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
+                userLoaded ? user ? <Link to='/stream' className='btn btn-primary'>Stream</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
                   <span className="loading loading-spinner loading-md"></span>
                 </div>
               }

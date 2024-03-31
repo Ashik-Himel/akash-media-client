@@ -1,62 +1,41 @@
 import { Helmet } from "react-helmet-async";
 import loginImg from '../assets/login.png';
 import HeaderBanner from "../components/shared/HeaderBanner";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
 import { auth } from "../firebase/firebase.config";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import useAllContext from "../hooks/useAllContext";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const {setUser} = useAllContext();
+  const [showPass, setShowPass] = useState(false);
+  const [showEye, setShowEye] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-  const [number, setNumber] = useState(null);
-  const [code, setCode] = useState(null);
-  const [buttonText, setButtonText] = useState("Send Code");
 
-  const onSendCode = () => {
-    setErrorMsg("");
+  const handleLogin = e => {
+    e.preventDefault();
 
-    if (number?.length != 13 || !number?.startsWith("8801")) {
-      setErrorMsg("Enter a valid number!");
-      return;
-    }
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-    setButtonText(<div className="px-4">
-      <span className="loading loading-spinner loading-md"></span>
-    </div>);
-
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'submit-button', {
-      'size': 'invisible'
-    });
-
-    if (window?.recaptchaVerifier) {
-      signInWithPhoneNumber(auth, "+" + number, window?.recaptchaVerifier)
-        .then((confirmationResult) => {
-          setButtonText("Code Sent!");
-          window.confirmationResult = confirmationResult;
-        }).catch(() => {
-          setErrorMsg("SMS not sent!");
-        });
-    }
-  }
-
-  const handleLogin = () => {
-    window.confirmationResult.confirm(code)
-      .then((result) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        setUser(userCredential.user);
         Swal.fire({
           title: "Successful",
-          text: "Login Successful!",
+          text: "Your account logged in successfully",
           icon: "success",
           iconColor: "#263791",
           confirmButtonColor: "#263791"
-        })
-        setUser(result.user);
-      }).catch(() => {
-        setErrorMsg("Login Failed!")
-      });
+        });
+      })
+      .catch(error => {
+        if (error.code === "auth/invalid-credential") setErrorMsg("Invalid email or password")
+        else setErrorMsg(error.code);
+      })
   };
 
   return (
@@ -84,52 +63,36 @@ export default function Login() {
               <img src={loginImg} alt="Login Image" className="w-full max-w-[450px] mx-auto" />
             </div>
 
-            <form
-              className="bg-bg-color px-6 py-8 rounded-lg"
-              onSubmit={e => e.preventDefault()}
-            >
-              <h2 className="text-3xl font-semibold text-primary text-center mb-6">
-                Login to your account
-              </h2>
-              <label className="block font-medium mb-2" htmlFor="phone">
-                Phone Number
-              </label>
-              <PhoneInput
-                country={'bd'}
-                value={this?.state?.phone}
-                onlyCountries={["bd"]}
-                countryCodeEditable={false}
-                autoFormat={false}
-                onChange={phone => {
-                  this?.setState({ phone });
-                  setNumber(phone);
-                  setErrorMsg("");
-                }}
-                inputProps={{
-                  name: "phone",
-                  id: "phone",
-                  required: true
-                }}
-              />
+            <form className="bg-bg-color px-6 py-8 rounded-lg" onSubmit={handleLogin}>
+              <h2 className="text-3xl font-semibold text-primary text-center mb-6">Login</h2>
 
-              <label className="block font-medium mb-2 mt-4" htmlFor="code">
-                Verification Code
-              </label>
-              <div className="relative">
-                <input className="input w-full" type="number" name="code" id="code" placeholder="Enter code" required onChange={e => {
-                  setCode(e.target.value);
+              <label htmlFor="email" className="block font-medium mb-2">Email</label>
+              <input className="input w-full mb-4 border-gray-300" onChange={() => setErrorMsg("")} type="email" name="email" id="email" placeholder="Enter your email" required />
+
+              <label htmlFor="password" className="block font-medium mb-2">Password</label>
+              <div className="relative mb-3">
+                <input className="input w-full border-gray-300" onChange={e => {
                   setErrorMsg("");
-                }} />
-                <button className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer select-none text-primary font-semibold disabled:text-gray-600 disabled:cursor-not-allowed" type="button" onClick={onSendCode} disabled={buttonText !== "Send Code" ? "disabled" : ""}>{buttonText}</button>
+                  e.target.value ? setShowEye(true) : setShowEye(false);
+                }} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Enter your password" required />
+                {
+                  showEye && <div className="absolute top-1/2 right-4 -translate-y-1/2 text-xl cursor-pointer select-none" onClick={() => setShowPass(!showPass)}>
+                    {
+                      showPass ? <FaEyeSlash /> : <FaEye />
+                    }
+                  </div>
+                }
               </div>
+
+              <button type="button" className="text-primary font-medium">Forget Password?</button>
 
               {
                 errorMsg && <p className="mt-4 text-red-600 font-semibold">{errorMsg}</p>
               }
 
-              <button className="btn btn-primary btn-block mt-5" id="submit-button" type="submit" onClick={handleLogin}>
-                Login
-              </button>
+              <button className="btn btn-primary btn-block mt-5" type="submit">Login</button>
+
+              <p className="mt-4">Don&apos;t have an account? <Link to="/register" className="font-medium text-primary">Register Now</Link></p>
             </form>
           </div>
         </div>
