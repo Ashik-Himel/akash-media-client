@@ -8,8 +8,10 @@ import useAllContext from "../hooks/useAllContext";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export default function Login() {
+  const axiosPublic = useAxiosPublic();
   const {setUser} = useAllContext();
   const [showPass, setShowPass] = useState(false);
   const [showEye, setShowEye] = useState(false);
@@ -23,14 +25,22 @@ export default function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        setUser(userCredential.user);
-        Swal.fire({
-          title: "Successful",
-          text: "Your account logged in successfully",
-          icon: "success",
-          iconColor: "#263791",
-          confirmButtonColor: "#263791"
-        });
+        axiosPublic(`/user?uid=${userCredential.user.uid}`, {withCredentials: true})
+          .then(res => {
+            let currentUser = userCredential.user;
+            currentUser.name = res.data.name;
+            currentUser.phone = res.data.phone;
+            currentUser.packages = res.data.packages;
+            setUser(currentUser);
+
+            Swal.fire({
+              title: "Successful",
+              text: "Your account logged in successfully",
+              icon: "success",
+              iconColor: "#263791",
+              confirmButtonColor: "#263791"
+            });
+          })
       })
       .catch(error => {
         if (error.code === "auth/invalid-credential") setErrorMsg("Invalid email or password")

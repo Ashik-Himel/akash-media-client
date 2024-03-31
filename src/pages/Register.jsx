@@ -5,11 +5,13 @@ import useAllContext from "../hooks/useAllContext";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export default function Register() {
+  const axiosPublic = useAxiosPublic();
   const {setUser} = useAllContext();
   const [showPass, setShowPass] = useState(false);
   const [showEye, setShowEye] = useState(false);
@@ -19,25 +21,36 @@ export default function Register() {
   const handleRegister = e => {
     e.preventDefault();
 
-    const displayName = e.target.name.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const phone = e.target.phone.value;
     const password = e.target.password.value;
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        updateProfile(auth.currentUser, {displayName, phone})
-          .then(() => {
-            Swal.fire({
-              title: "Successful!",
-              text: "Your account registered successfully",
-              icon: "success",
-              iconColor: "#263791",
-              confirmButtonColor: "#263791"
-            });
-            setUser(userCredential.user);
+        const document = {
+          uid: userCredential.user.uid,
+          name, email, phone,
+          packages: []
+        }
+        axiosPublic.post('/user', document, {withCredentials: true})
+          .then(res => {
+            if (res.data?.insertedId) {
+              let currentUser = userCredential.user;
+              currentUser.name = name;
+              currentUser.phone = phone;
+              currentUser.packages = [];
+              setUser(currentUser);
+
+              Swal.fire({
+                title: "Successful!",
+                text: "Your account registered successfully",
+                icon: "success",
+                iconColor: "#263791",
+                confirmButtonColor: "#263791"
+              });
+            }
           })
-          .catch((error) => setErrorMsg(error.code))
       })
       .catch((error) => setErrorMsg(error.code))
   }

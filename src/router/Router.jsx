@@ -13,6 +13,7 @@ import StreamHome from "../pages/stream/StreamHome";
 import PrivateRoute from "../manageRoutes/PrivateRoute";
 import StreamProfile from "../pages/stream/StreamProfile";
 import Register from "../pages/Register";
+import ChannelStream from "../pages/stream/ChannelStream";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: '/stream',
         element: <StreamHome />
+      },
+      {
+        path: '/stream/:id',
+        element: <ChannelStream />
       },
       {
         path: '/stream/profile',

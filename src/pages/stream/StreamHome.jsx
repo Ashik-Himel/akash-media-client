@@ -1,9 +1,24 @@
+import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAllContext from "../../hooks/useAllContext";
+import StreamHomeSection from "../../components/stream/streamHome/StreamHomeSection";
 
 export default function StreamHome() {
+  const axiosSecure = useAxiosSecure();
+  const {user, userLoaded} = useAllContext();
+
+  const {data: packages = []} = useQuery({
+    queryKey: ["packages", user?.uid],
+    queryFn: async() => {
+      const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
+      return res.data;
+    },
+    enabled: userLoaded
+  })
 
   return (
-    <main>
+    <main className="mb-8">
       <Helmet>
         <title>Stream - Akash Media</title>
         <meta name="description" content="Akash Media is a Direct-to-Home (DTH) television service provider. We have 250+ channels with 80+ hd channels in competitive packages. You can get an easy connection from us." />
@@ -18,11 +33,9 @@ export default function StreamHome() {
         <meta property="og:url" content="https://www.akashmedia.net/stream" />
       </Helmet>
 
-      <section className="mt-6">
-        <div className="container">
-          <iframe id="channel-frame" className="w-full max-w-[900px] aspect-video" src="https://103.161.226.101:8009/TEST_CHANNEL/embed.html" allowFullScreen ></iframe>
-        </div>
-      </section>
+      {
+        packages?.map(pkg => <StreamHomeSection key={pkg?.id} pkg={pkg} />)
+      }
     </main>
   );
 }

@@ -7,9 +7,11 @@ import { auth } from '../../firebase/firebase.config';
 import brandLogo from '../../assets/akash-media.png';
 import ProfilePic from '../../assets/profile-pic.png';
 import Swal from 'sweetalert2';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 export default function StreamHeader() {
-  const {user} = useAllContext();
+  const axiosPublic = useAxiosPublic();
+  const {user, setUser} = useAllContext();
   const [profileCardShow, setProfileCardShow] = useState(false);
   const profileImgRef = useRef(null);
   const profileCardRef = useRef(null);
@@ -17,13 +19,19 @@ export default function StreamHeader() {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        Swal.fire({
-          title: "Successful",
-          text: "Logout Successful!",
-          icon: "success",
-          iconColor: "#263791",
-          confirmButtonColor: "#263791"
-        })
+        axiosPublic('/logout', {withCredentials: true})
+         .then(res => {
+          if (res.data.message === "Ok") {
+            Swal.fire({
+              title: "Successful",
+              text: "Logout Successful!",
+              icon: "success",
+              iconColor: "#263791",
+              confirmButtonColor: "#263791"
+            })
+            setUser(null);
+          }
+         })
       })
   }
 
@@ -64,7 +72,7 @@ export default function StreamHeader() {
             {/* Profile Card */}
             <div className={`absolute top-[calc(100%+7px)] right-0 bg-gray-300 p-6 rounded-lg w-full max-w-[350px] text-center z-10 ${profileCardShow ? 'block' : 'hidden'}`} ref={profileCardRef}>
               <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[60px] h-[60px] object-cover object-center rounded-full block mx-auto mb-4" />
-              <span className="block text-[18px] font-medium">{user?.displayName || "No Name"}</span>
+              <span className="block text-[18px] font-medium">{user?.name || "No Name"}</span>
               <span className="block mb-4">{user?.email || "No Email"}</span>
               <div className="flex justify-center items-center gap-2">
                 <Link to='/stream/profile' className="btn btn-primary" onClick={() => setProfileCardShow(false)}>View Profile</Link>
