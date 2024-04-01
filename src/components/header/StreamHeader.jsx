@@ -75,7 +75,7 @@ export default function StreamHeader() {
               <span className="block text-[18px] font-medium">{user?.name || "No Name"}</span>
               <span className="block mb-4">{user?.email || "No Email"}</span>
               <div className="flex justify-center items-center gap-2">
-                <Link to='/stream/profile' className="btn btn-primary" onClick={() => setProfileCardShow(false)}>View Profile</Link>
+                <Link to='/' className="btn btn-primary" onClick={() => setProfileCardShow(false)}>Return Home</Link>
                 <button type="button" className="btn btn-warning" onClick={handleLogout}>Logout</button>
               </div>
             </div>

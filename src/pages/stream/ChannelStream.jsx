@@ -4,13 +4,15 @@ import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAllContext from "../../hooks/useAllContext";
 import ChannelCard from "../../components/channels/ChannelCard";
+import { useEffect } from "react";
+import StreamHomeSection from "../../components/stream/streamHome/StreamHomeSection";
 
 export default function ChannelStream() {
   const params = useParams();
   const axiosSecure = useAxiosSecure();
   const {user} = useAllContext();
 
-  const {data: channel = {}, isLoading} = useQuery({
+  const {data: channel = {}, isLoading, refetch} = useQuery({
     queryKey: ["channel", params?.id],
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels/channel?id=${params?.id}`);
@@ -18,7 +20,7 @@ export default function ChannelStream() {
     }
   })
 
-  const {data: packages = []} = useQuery({
+  const {data: packages = [], isLoading: isLoading2, refetch: refetch2} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
@@ -26,7 +28,12 @@ export default function ChannelStream() {
     }
   })
 
-  if (isLoading) {
+  useEffect(() => {
+    refetch();
+    refetch2();
+  }, [params?.id])
+
+  if (isLoading || isLoading2) {
     return (
       <div className="mt-10 text-center">
         <span className="loading loading-spinner loading-lg text-primary"></span>
@@ -35,7 +42,7 @@ export default function ChannelStream() {
   }
 
   return (
-    <main>
+    <main className="mb-8">
       <Helmet>
         <title>{channel?.name || "Channel"} - Akash Media</title>
         <meta name="description" content="Akash Media is a Direct-to-Home (DTH) television service provider. We have 250+ channels with 80+ hd channels in competitive packages. You can get an easy connection from us." />
@@ -73,13 +80,17 @@ export default function ChannelStream() {
               <h2 className="text-2xl font-medium mb-4">Favourite Channels</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-2 gap-4">
                 {
-                  (packages[0]?.channels?.splice(0, 4))?.map(channel => <ChannelCard key={channel?.serial} channel={channel} />)
+                  packages[0]?.channels?.slice(0, 4)?.map(channel => <ChannelCard key={channel?.serial} channel={channel} />)
                 }
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {
+        packages?.length !== 0 && packages?.map(pkg => <StreamHomeSection key={pkg?.id} pkg={pkg} />)
+      }
     </main>
   );
 }
