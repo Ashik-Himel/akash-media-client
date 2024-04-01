@@ -15,7 +15,7 @@ export default function ContextProvider({children}) {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, user => {
       if (user?.uid) {
-        axiosPublic(`/user?uid=${user.uid}`, {withCredentials: true})
+        axiosPublic(`/user?email=${user.email}`, {withCredentials: true})
           .then(res => {
             let currentUser = user;
             currentUser.name = res.data.name,

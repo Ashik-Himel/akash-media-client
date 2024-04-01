@@ -25,7 +25,7 @@ export default function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        axiosPublic(`/user?uid=${userCredential.user.uid}`, {withCredentials: true})
+        axiosPublic(`/user?email=${userCredential.user.email}`, {withCredentials: true})
           .then(res => {
             let currentUser = userCredential.user;
             currentUser.name = res.data.name;
