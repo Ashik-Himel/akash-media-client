@@ -6,15 +6,14 @@ import StreamHomeSection from "../../components/stream/streamHome/StreamHomeSect
 
 export default function StreamHome() {
   const axiosSecure = useAxiosSecure();
-  const {user, userLoaded} = useAllContext();
+  const {user} = useAllContext();
 
   const {data: packages = []} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
       return res.data;
-    },
-    enabled: userLoaded
+    }
   })
 
   return (
