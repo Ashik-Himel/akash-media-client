@@ -13,6 +13,11 @@ import StreamHome from "../pages/stream/StreamHome";
 import PrivateRoute from "../manageRoutes/PrivateRoute";
 import Register from "../pages/Register";
 import ChannelStream from "../pages/stream/ChannelStream";
+import VerifyUser from "../pages/stream/VerifyUser";
+import PrivateRouteVerified from "../manageRoutes/PrivateRouteVerified";
+import PaymentSuccess from "../pages/payment/PaymentSuccess";
+import PaymentFailed from "../pages/payment/PaymentFailed";
+import PaymentCancelled from "../pages/payment/PaymentCancelled";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +52,18 @@ export const router = createBrowserRouter([
       {
         path: '/register',
         element: <PrivateRouteAlt><Register /></PrivateRouteAlt>
+      },
+      {
+        path: '/payment-success',
+        element: <PaymentSuccess />
+      },
+      {
+        path: '/payment-failed',
+        element: <PaymentFailed />
+      },
+      {
+        path: '/payment-cancelled',
+        element: <PaymentCancelled />
       }
     ]
   },
@@ -57,11 +74,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/stream',
-        element: <StreamHome />
+        element: <PrivateRouteVerified><StreamHome /></PrivateRouteVerified>
       },
       {
         path: '/stream/:id',
-        element: <ChannelStream />
+        element: <PrivateRouteVerified><ChannelStream /></PrivateRouteVerified>
+      },
+      {
+        path: '/stream/verify-user',
+        element: <VerifyUser />
       }
     ]
   }

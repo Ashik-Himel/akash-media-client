@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import {MdOutlineRemoveRedEye} from 'react-icons/md';
 import {FaXmark} from 'react-icons/fa6';
 import { useState } from "react";
 import ChannelCard from "../channels/ChannelCard";
+import useAllContext from "../../hooks/useAllContext";
+import Swal from "sweetalert2";
 
 const ChannelsCard = ({channels, cardVisible, setCardVisible}) => {
   return (
@@ -26,8 +27,63 @@ const ChannelsCard = ({channels, cardVisible, setCardVisible}) => {
   );
 }
 
+const PackagePurchase = ({packageObj, purchaseVisible, setPurchaseVisible}) => {
+  const {user} = useAllContext();
+  const axiosPublic = useAxiosPublic();
+
+  const handleStreamPackagePurchase = e => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const data = {
+      package_id: packageObj?._id,
+      user_email: email
+    };
+    axiosPublic.post('/payment-init', data)
+      .then(res => {
+        if (res.data?.status === "ok") {
+          window.location.replace(res.data?.url);
+        } else if (res.data?.status === "user doesn't exist!") {
+          setPurchaseVisible(false);
+          Swal.fire({
+            title: "Error!",
+            text: "No user available with this email.",
+            icon: "error",
+            confirmButtonColor: "#263791"
+          });
+        }
+      });
+  }
+
+  return (
+    <div className="justify-center items-center fixed inset-0 bg-[rgba(0,0,0,0.7)] z-50 p-6" style={purchaseVisible ? {display: "flex"} : {display: "none"}}>
+      <div className="bg-white rounded-lg p-8 relative overflow-auto w-full max-w-[500px] mx-auto max-h-[calc(100vh-3rem)]">
+        <div className="absolute top-4 right-4 text-2xl text-primary cursor-pointer select-none" onClick={() => setPurchaseVisible(false)}>
+          <FaXmark />
+        </div>
+
+        <div className="text-left">
+          <h2 className="text-center text-2xl font-medium mb-6">Buy Package</h2>
+          <h4 className="text-[18px] font-medium mb-2">Package Details:</h4>
+          <p><span className="font-medium">Package Name: </span> {packageObj?.name}</p>
+          <p><span className="font-medium">Price: </span> {packageObj?.price} taka</p>
+          <p><span className="font-medium">Duration: </span> 1 month</p>
+          <p><span className="font-medium">Total Channels: </span> {packageObj?.channels?.length}</p>
+
+          <form className="mt-6" onSubmit={handleStreamPackagePurchase}>
+            <label htmlFor="email" className="font-medium block mb-2">Purchasing For (Email)</label>
+            <input className="input w-full border border-gray-300 mb-4" type="email" name="email" id="email" placeholder="Enter your account's email" defaultValue={user?.email || ''} required />
+            <button type="submit" className="btn btn-primary">Pay Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const PackageCard = ({packageObj}) => {
   const [cardVisible, setCardVisible] = useState(false);
+  const [purchaseVisible, setPurchaseVisible] = useState(false);
   const { name, price, channels } = packageObj;
 
   return (
@@ -49,9 +105,8 @@ const PackageCard = ({packageObj}) => {
       </button>
       <ChannelsCard channels={channels} cardVisible={cardVisible} setCardVisible={setCardVisible} />
 
-      <Link className="btn btn-primary">
-        Buy Now
-      </Link>
+      <button type="button" className="btn btn-primary" onClick={() => setPurchaseVisible(true)}>Buy Now</button>
+      <PackagePurchase packageObj={packageObj} purchaseVisible={purchaseVisible} setPurchaseVisible={setPurchaseVisible} />
     </div>
   );
 };
@@ -90,6 +145,11 @@ ChannelsCard.propTypes = {
   channels: PropTypes.array,
   cardVisible: PropTypes.bool,
   setCardVisible: PropTypes.func
+}
+PackagePurchase.propTypes = {
+  packageObj: PropTypes.object,
+  purchaseVisible: PropTypes.bool,
+  setPurchaseVisible: PropTypes.func
 }
 PackageCard.propTypes = {
   packageObj: PropTypes.object

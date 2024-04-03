@@ -5,7 +5,7 @@ import useAllContext from "../hooks/useAllContext";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
@@ -28,28 +28,31 @@ export default function Register() {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const document = {
-          uid: userCredential.user.uid,
-          name, email, phone,
-          packages: []
-        }
-        axiosPublic.post('/user', document, {withCredentials: true})
-          .then(res => {
-            if (res.data?.insertedId) {
-              let currentUser = userCredential.user;
-              currentUser.name = name;
-              currentUser.phone = phone;
-              currentUser.packages = [];
-              setUser(currentUser);
-
-              Swal.fire({
-                title: "Successful!",
-                text: "Your account registered successfully",
-                icon: "success",
-                iconColor: "#263791",
-                confirmButtonColor: "#263791"
-              });
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            const document = {
+              uid: userCredential.user.uid,
+              name, email, phone,
+              packages: []
             }
+            axiosPublic.post('/user', document, {withCredentials: true})
+              .then(res => {
+                if (res.data?.insertedId) {
+                  let currentUser = userCredential.user;
+                  currentUser.name = name;
+                  currentUser.phone = phone;
+                  currentUser.packages = [];
+                  setUser(currentUser);
+    
+                  Swal.fire({
+                    title: "Registration Successful!",
+                    text: "Please check your inbox and verify your account.",
+                    icon: "success",
+                    iconColor: "#263791",
+                    confirmButtonColor: "#263791"
+                  });
+                }
+              })
           })
       })
       .catch((error) => setErrorMsg(error.code))

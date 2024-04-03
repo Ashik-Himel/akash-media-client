@@ -62,7 +62,7 @@ export default function ChannelStream() {
           <div className="grid grid-cols-1 xl:grid-cols-[auto_400px] gap-8">
             <div className="w-full max-w-[900px]">
               <iframe className="aspect-video w-full" src={channel?.source} allowFullScreen></iframe>
-              <div className="flex items-center gap-4 mt-4">
+              <div className="flex items-center gap-4 mt-4 bg-gray-100 px-4 py-2 rounded-lg">
                 <img src={channel?.logo} alt="Channel Logo" className="h-[50px]" />
                 <div>
                   <div className="flex items-center gap-2">

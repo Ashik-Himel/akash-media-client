@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import loginImg from '../assets/login.png';
 import HeaderBanner from "../components/shared/HeaderBanner";
 import { auth } from "../firebase/firebase.config";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import useAllContext from "../hooks/useAllContext";
 import Swal from "sweetalert2";
@@ -16,6 +16,7 @@ export default function Login() {
   const [showPass, setShowPass] = useState(false);
   const [showEye, setShowEye] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
 
   const handleLogin = e => {
     e.preventDefault();
@@ -47,6 +48,47 @@ export default function Login() {
         else setErrorMsg(error.code);
       })
   };
+  const handleForgetPassword = () => {
+    if (inputEmail) {
+      Swal.fire({
+        title: "Reset Password",
+        text: "Are you sure to get email to reset your password?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#263791",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Sure!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          sendPasswordResetEmail(auth, inputEmail)
+            .then(() => {
+              Swal.fire({
+                title: "Email Sent",
+                text: "Email sent successfully. Please check your inbox.",
+                icon: "success",
+                iconColor: "#263791",
+                confirmButtonColor: "#263791"
+              })
+            })
+            .catch(error => {
+              Swal.fire({
+                title: "Error!",
+                text: error.code,
+                icon: "error",
+                confirmButtonColor: "#263791"
+              })
+            })
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Error",
+        text: "Enter your email to the email input field.",
+        icon: "error",
+        confirmButtonColor: "#263791"
+      })
+    }
+  }
 
   return (
     <main>
@@ -77,7 +119,10 @@ export default function Login() {
               <h2 className="text-3xl font-semibold text-primary text-center mb-6">Login</h2>
 
               <label htmlFor="email" className="block font-medium mb-2">Email</label>
-              <input className="input w-full mb-4 border-gray-300" onChange={() => setErrorMsg("")} type="email" name="email" id="email" placeholder="Enter your email" required />
+              <input className="input w-full mb-4 border-gray-300" onChange={e => {
+                setErrorMsg("");
+                setInputEmail(e.target.value);
+              }} type="email" name="email" id="email" placeholder="Enter your email" required />
 
               <label htmlFor="password" className="block font-medium mb-2">Password</label>
               <div className="relative mb-3">
@@ -94,7 +139,7 @@ export default function Login() {
                 }
               </div>
 
-              <button type="button" className="text-primary font-medium">Forget Password?</button>
+              <button type="button" className="text-primary font-medium" onClick={handleForgetPassword}>Forget Password?</button>
 
               {
                 errorMsg && <p className="mt-4 text-red-600 font-semibold">{errorMsg}</p>
