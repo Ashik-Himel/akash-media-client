@@ -10,14 +10,15 @@ import StreamHomeSection from "../../components/stream/streamHome/StreamHomeSect
 export default function ChannelStream() {
   const params = useParams();
   const axiosSecure = useAxiosSecure();
-  const {user} = useAllContext();
+  const {user, userLoaded} = useAllContext();
 
   const {data: channel = {}, isLoading, refetch} = useQuery({
     queryKey: ["channel", params?.id],
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels/channel?id=${params?.id}`);
       return res.data;
-    }
+    },
+    enabled: userLoaded
   })
 
   const {data: packages = [], isLoading: isLoading2, refetch: refetch2} = useQuery({
@@ -25,12 +26,14 @@ export default function ChannelStream() {
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
       return res.data;
-    }
+    },
+    enabled: userLoaded
   })
 
   useEffect(() => {
     refetch();
     refetch2();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.id])
 
   if (isLoading || isLoading2) {

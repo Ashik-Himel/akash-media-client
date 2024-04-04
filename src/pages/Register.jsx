@@ -41,7 +41,6 @@ export default function Register() {
                   let currentUser = userCredential.user;
                   currentUser.name = name;
                   currentUser.phone = phone;
-                  currentUser.packages = [];
                   setUser(currentUser);
     
                   Swal.fire({

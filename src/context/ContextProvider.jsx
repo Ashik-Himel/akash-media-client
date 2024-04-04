@@ -7,20 +7,19 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 export const AllContext = createContext(null);
 
 export default function ContextProvider({children}) {
-  const axiosPublic = useAxiosPublic();
   const [user, setUser] = useState(null);
   const [userLoaded, setUserLoaded] = useState(false);
-  console.log(user)
+  const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, user => {
       if (user?.email) {
-        axiosPublic(`/user?email=${user.email}`, {withCredentials: true})
+        setUser(user);
+        axiosPublic(`/user?email=${user?.email}`, {withCredentials: true})
           .then(res => {
             let currentUser = user;
             currentUser.name = res.data.name,
             currentUser.phone = res.data.phone,
-            currentUser.packages = res.data.packages;
             setUser(currentUser);
             setUserLoaded(true);
           })
@@ -29,6 +28,7 @@ export default function ContextProvider({children}) {
       }
     });
     return () => unSubscribe(); 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const value = {

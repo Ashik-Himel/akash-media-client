@@ -8,14 +8,15 @@ import { Link } from "react-router-dom";
 
 export default function StreamHome() {
   const axiosSecure = useAxiosSecure();
-  const {user} = useAllContext();
+  const {user, userLoaded} = useAllContext();
 
   const {data: packages = [], isLoading} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
       const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
       return res.data;
-    }
+    },
+    enabled: userLoaded
   })
 
   if (isLoading) {

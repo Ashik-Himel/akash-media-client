@@ -26,12 +26,11 @@ export default function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        axiosPublic(`/user?email=${userCredential.user.email}`, {withCredentials: true})
+        axiosPublic(`/login?email=${userCredential?.user?.email}`, {withCredentials: true})
           .then(res => {
             let currentUser = userCredential.user;
             currentUser.name = res.data.name;
             currentUser.phone = res.data.phone;
-            currentUser.packages = res.data.packages;
             setUser(currentUser);
 
             Swal.fire({
