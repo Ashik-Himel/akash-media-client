@@ -15,7 +15,7 @@ export default function ChannelStream() {
   const {data: channel = {}, isLoading, refetch} = useQuery({
     queryKey: ["channel", params?.id],
     queryFn: async() => {
-      const res = await axiosSecure(`/users-channels/channel?id=${params?.id}`);
+      const res = await axiosSecure(`/users-channel?id=${params?.id}`);
       return res.data;
     },
     enabled: userLoaded
@@ -24,7 +24,7 @@ export default function ChannelStream() {
   const {data: packages = [], isLoading: isLoading2, refetch: refetch2} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
-      const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
+      const res = await axiosSecure('/users-packages');
       return res.data;
     },
     enabled: userLoaded
@@ -41,6 +41,18 @@ export default function ChannelStream() {
       <div className="mt-10 text-center">
         <span className="loading loading-spinner loading-lg text-primary"></span>
       </div>
+    );
+  }
+
+  if (channel?.message === "Unauthorized Channel Access") {
+    return (
+      <main>
+        <section>
+          <div className="container">
+
+          </div>
+        </section>
+      </main>
     );
   }
 
@@ -92,7 +104,7 @@ export default function ChannelStream() {
       </section>
 
       {
-        packages?.length !== 0 && packages?.map(pkg => <StreamHomeSection key={pkg?.id} pkg={pkg} />)
+        packages?.length !== 0 && packages?.map(pkg => <StreamHomeSection key={pkg?._id} pkg={pkg} />)
       }
     </main>
   );

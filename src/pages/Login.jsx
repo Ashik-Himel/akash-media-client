@@ -12,7 +12,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export default function Login() {
   const axiosPublic = useAxiosPublic();
-  const {setUser} = useAllContext();
+  const {setUser, setUserLoaded} = useAllContext();
   const [showPass, setShowPass] = useState(false);
   const [showEye, setShowEye] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -28,9 +28,10 @@ export default function Login() {
       .then(userCredential => {
         axiosPublic(`/login?email=${userCredential?.user?.email}`, {withCredentials: true})
           .then(res => {
+            setUserLoaded(false);
             let currentUser = userCredential.user;
             currentUser.name = res.data.name;
-            currentUser.phone = res.data.phone;
+            currentUser.number = res.data.phone;
             setUser(currentUser);
 
             Swal.fire({
@@ -40,6 +41,8 @@ export default function Login() {
               iconColor: "#263791",
               confirmButtonColor: "#263791"
             });
+
+            setUserLoaded(true);
           })
       })
       .catch(error => {

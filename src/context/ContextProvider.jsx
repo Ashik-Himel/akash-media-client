@@ -14,12 +14,11 @@ export default function ContextProvider({children}) {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, user => {
       if (user?.email) {
-        setUser(user);
-        axiosPublic(`/user?email=${user?.email}`, {withCredentials: true})
+        axiosPublic(`/user?uid=${user?.uid}`, {withCredentials: true})
           .then(res => {
             let currentUser = user;
             currentUser.name = res.data.name,
-            currentUser.phone = res.data.phone,
+            currentUser.number = res.data.phone,
             setUser(currentUser);
             setUserLoaded(true);
           })
@@ -34,7 +33,8 @@ export default function ContextProvider({children}) {
   const value = {
     user,
     setUser,
-    userLoaded
+    userLoaded,
+    setUserLoaded
   }
   return (
     <AllContext.Provider value={value}>

@@ -12,7 +12,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export default function Register() {
   const axiosPublic = useAxiosPublic();
-  const {setUser} = useAllContext();
+  const {setUser, setUserLoaded} = useAllContext();
   const [showPass, setShowPass] = useState(false);
   const [showEye, setShowEye] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -28,6 +28,7 @@ export default function Register() {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        setUserLoaded(false);
         sendEmailVerification(auth.currentUser)
           .then(() => {
             const document = {
@@ -40,7 +41,7 @@ export default function Register() {
                 if (res.data?.insertedId) {
                   let currentUser = userCredential.user;
                   currentUser.name = name;
-                  currentUser.phone = phone;
+                  currentUser.number = phone;
                   setUser(currentUser);
     
                   Swal.fire({
@@ -51,6 +52,7 @@ export default function Register() {
                     confirmButtonColor: "#263791"
                   });
                 }
+                setUserLoaded(true);
               })
           })
       })

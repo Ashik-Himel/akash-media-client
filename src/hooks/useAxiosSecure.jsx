@@ -6,7 +6,7 @@ import useAxiosPublic from "./useAxiosPublic";
 import { useNavigate } from "react-router-dom";
 
 const useAxiosSecure = () => {
-  const {user} = useAllContext();
+  const {user, setUser} = useAllContext();
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
 
@@ -24,13 +24,17 @@ const useAxiosSecure = () => {
     if (res.data?.message === "Token Missing") {
       signOut(auth)
         .then(() => {
+          setUser(null);
           navigate('/login');
         });
     } else if (res.data?.message === "Unauthorize Access") {
       signOut(auth)
         .then(() => {
-          axiosPublic('/logout', {withCredentials: true});
-          navigate('/login');
+          axiosPublic('/logout', {withCredentials: true})
+            .then(() => {
+              setUser(null);
+              navigate('/login');
+            });
         })
     } else {
       return res;

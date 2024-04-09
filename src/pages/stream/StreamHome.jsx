@@ -13,7 +13,7 @@ export default function StreamHome() {
   const {data: packages = [], isLoading} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
-      const res = await axiosSecure(`/users-channels?uid=${user?.uid}`);
+      const res = await axiosSecure('/users-packages');
       return res.data;
     },
     enabled: userLoaded
@@ -44,7 +44,7 @@ export default function StreamHome() {
       </Helmet>
 
       {
-        packages?.length !== 0 ? packages?.map(pkg => <StreamHomeSection key={pkg?.id} pkg={pkg} />) : <section className="mt-12">
+        packages?.length !== 0 ? packages?.map(pkg => <StreamHomeSection key={pkg?._id} pkg={pkg} />) : <section className="mt-12">
           <div className="container text-center">
             <img src={emptyBin} alt="Empty Bin Image" className="w-full max-w-[200px] mx-auto" />
             <h2 className="text-3xl font-medium mt-6">No Package Found!</h2>

@@ -16,7 +16,7 @@ export default function ChannelCard({channel}) {
         }
       </div>
       <img src={channel?.logo} alt="Channel's Logo" className='w-auto h-[60px] mx-auto mb-2' />
-      <span className='font-semibold text-center block'>{channel?.displayName}</span>
+      <span className='font-semibold text-center block'>{channel?.name}</span>
       
     </Link>
   );
