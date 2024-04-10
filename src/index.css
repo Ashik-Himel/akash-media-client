@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply text-base h-auto min-h-[40px];
+    @apply text-base h-auto min-h-[38px];
   }
   .btn-primary {
     @apply text-white;
