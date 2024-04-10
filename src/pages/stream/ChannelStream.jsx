@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAllContext from "../../hooks/useAllContext";
 import ChannelCard from "../../components/channels/ChannelCard";
 import { useEffect } from "react";
 import StreamHomeSection from "../../components/stream/streamHome/StreamHomeSection";
+import warningIcon from '../../assets/warning.png'
 
 export default function ChannelStream() {
   const params = useParams();
@@ -21,10 +22,19 @@ export default function ChannelStream() {
     enabled: userLoaded
   })
 
+  const {data: relatedChannelsPackage = [], isLoading: isLoading3, refetch: refetch3} = useQuery({
+    queryKey: ["relatedChannelsPackage", params?.id],
+    queryFn: async() => {
+      const res = await axiosSecure(`/related-channels-package?channel_id=${params?.id}`);
+      return res.data;
+    },
+    enabled: userLoaded
+  })
+
   const {data: packages = [], isLoading: isLoading2, refetch: refetch2} = useQuery({
     queryKey: ["packages", user?.uid],
     queryFn: async() => {
-      const res = await axiosSecure('/users-packages');
+      const res = await axiosSecure('/users-packages?filter=running');
       return res.data;
     },
     enabled: userLoaded
@@ -33,10 +43,11 @@ export default function ChannelStream() {
   useEffect(() => {
     refetch();
     refetch2();
+    refetch3();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params?.id])
 
-  if (isLoading || isLoading2) {
+  if (isLoading || isLoading2 || isLoading3) {
     return (
       <div className="mt-10 text-center">
         <span className="loading loading-spinner loading-lg text-primary"></span>
@@ -46,10 +57,16 @@ export default function ChannelStream() {
 
   if (channel?.message === "Unauthorized Channel Access") {
     return (
-      <main>
+      <main className="my-12">
         <section>
-          <div className="container">
-
+          <div className="container text-center">
+            <img src={warningIcon} alt="Warning Icon" className="w-full max-w-[250px] mx-auto mb-4" />
+            <h2 className="text-3xl font-medium text-red-600 mb-1">Unauthorized Access</h2>
+            <p className="w-full max-w-[550px] mx-auto mb-6">The channel you are requesting to watch is not available for you. Buy package that including this channel, then enjoy this channel.</p>
+            <div className="flex justify-center items-center gap-2">
+              <Link to='/packages' className="btn btn-primary">Packages</Link>
+              <Link to='/stream' className="btn btn-primary btn-outline border-2">Stream Home</Link>
+            </div>
           </div>
         </section>
       </main>
@@ -57,7 +74,7 @@ export default function ChannelStream() {
   }
 
   return (
-    <main className="mb-8">
+    <main className="mb-12">
       <Helmet>
         <title>{channel?.name || "Channel"} - Akash Media</title>
         <meta name="description" content="Akash Media is a Direct-to-Home (DTH) television service provider. We have 250+ channels with 80+ hd channels in competitive packages. You can get an easy connection from us." />
@@ -76,7 +93,7 @@ export default function ChannelStream() {
         <div className="container">
           <div className="grid grid-cols-1 xl:grid-cols-[auto_400px] gap-8">
             <div className="w-full max-w-[900px]">
-              <iframe className="aspect-video w-full" src={channel?.source} allowFullScreen></iframe>
+              <iframe className="aspect-video w-full rounded-lg" src={channel?.source} allowFullScreen></iframe>
               <div className="flex items-center gap-4 mt-4 bg-gray-100 px-4 py-2 rounded-lg">
                 <img src={channel?.logo} alt="Channel Logo" className="h-[50px]" />
                 <div>
@@ -92,10 +109,10 @@ export default function ChannelStream() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-medium mb-4">Favourite Channels</h2>
+              <h2 className="text-2xl font-medium mb-4">Related Channels</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-2 gap-4">
                 {
-                  packages[0]?.channels?.slice(0, 4)?.map(channel => <ChannelCard key={channel?.serial} channel={channel} />)
+                  relatedChannelsPackage?.map(channel => <ChannelCard key={channel?.serial} channel={channel} />)
                 }
               </div>
             </div>

@@ -84,7 +84,7 @@ const PackagePurchase = ({packageObj, purchaseVisible, setPurchaseVisible}) => {
 const PackageCard = ({packageObj}) => {
   const [cardVisible, setCardVisible] = useState(false);
   const [purchaseVisible, setPurchaseVisible] = useState(false);
-  const { name, price, channels } = packageObj;
+  const { name, price, duration, channels } = packageObj;
 
   return (
     <div
@@ -97,7 +97,7 @@ const PackageCard = ({packageObj}) => {
         <span className="text-5xl sm:text-[40px] md:text-5xl lg:text-[40px] xl:text-5xl font-bold">
           {price}&#2547;
         </span>
-        <span className="font-medium text-xl">/ month</span>
+        <span className="font-medium text-xl">/ {duration} days</span>
       </div>
       
       <button type="button" className="flex justify-center items-center gap-1 mx-auto mb-4 text-primary font-semibold" onClick={() => setCardVisible(true)}>

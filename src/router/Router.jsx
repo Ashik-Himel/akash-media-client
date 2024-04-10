@@ -18,6 +18,7 @@ import PrivateRouteVerified from "../manageRoutes/PrivateRouteVerified";
 import PaymentSuccess from "../pages/payment/PaymentSuccess";
 import PaymentFailed from "../pages/payment/PaymentFailed";
 import PaymentCancelled from "../pages/payment/PaymentCancelled";
+import UserProfile from "../pages/stream/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: '/stream/:id',
         element: <PrivateRouteVerified><ChannelStream /></PrivateRouteVerified>
+      },
+      {
+        path: '/stream/profile',
+        element: <UserProfile />
       },
       {
         path: '/stream/verify-user',

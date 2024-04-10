@@ -47,7 +47,7 @@ export default function VerifyUser() {
   }
 
   return (
-    <main className="mb-8">
+    <main className="mb-12">
       <Helmet>
         <title>Verify User - Akash Media</title>
         <meta name="description" content="Akash Media is a Direct-to-Home (DTH) television service provider. We have 250+ channels with 80+ hd channels in competitive packages. You can get an easy connection from us." />
