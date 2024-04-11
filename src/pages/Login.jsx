@@ -117,18 +117,18 @@ export default function Login() {
               <img src={loginImg} alt="Login Image" className="w-full max-w-[450px] mx-auto" />
             </div>
 
-            <form className="bg-bg-color px-6 py-8 rounded-lg" onSubmit={handleLogin}>
+            <form className="bg-bg-color dark:bg-gray-700 px-6 py-8 rounded-lg" onSubmit={handleLogin}>
               <h2 className="text-3xl font-semibold text-primary text-center mb-6">Login</h2>
 
               <label htmlFor="email" className="block font-medium mb-2">Email</label>
-              <input className="input w-full mb-4 border-gray-300" onChange={e => {
+              <input className="input w-full mb-4 border-gray-300 text-black" onChange={e => {
                 setErrorMsg("");
                 setInputEmail(e.target.value);
               }} type="email" name="email" id="email" placeholder="Enter your email" required />
 
               <label htmlFor="password" className="block font-medium mb-2">Password</label>
               <div className="relative mb-3">
-                <input className="input w-full border-gray-300" onChange={e => {
+                <input className="input w-full border-gray-300 text-black" onChange={e => {
                   setErrorMsg("");
                   e.target.value ? setShowEye(true) : setShowEye(false);
                 }} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Enter your password" required />

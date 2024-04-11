@@ -106,21 +106,21 @@ export default function Register() {
       <section className="mt-12 lg:mt-16">
         <div className="container">
           <div className="flex justify-center items-center gap-8 [&>*]:flex-1" >
-            <form className="bg-bg-color px-6 py-8 rounded-lg" onSubmit={handleRegister}>
+            <form className="bg-bg-color dark:bg-gray-700 px-6 py-8 rounded-lg" onSubmit={handleRegister}>
               <h2 className="text-3xl font-semibold text-primary text-center mb-6">Register</h2>
 
               <label htmlFor="name" className="block font-medium mb-2">Name</label>
-              <input className="input w-full mb-4 border-gray-300" type="text" name="name" id="name" placeholder="Enter your name" required />
+              <input className="input w-full mb-4 border-gray-300 text-black" type="text" name="name" id="name" placeholder="Enter your name" required />
 
               <label htmlFor="email" className="block font-medium mb-2">Email</label>
-              <input className="input w-full mb-4 border-gray-300" type="email" name="email" id="email" placeholder="Enter your email" required />
+              <input className="input w-full mb-4 border-gray-300 text-black" type="email" name="email" id="email" placeholder="Enter your email" required />
 
               <label htmlFor="phone" className="block font-medium mb-2">Phone Number</label>
-              <input className="input w-full mb-4 border-gray-300" type="tel" name="phone" id="phone" placeholder="Enter your phone number" required />
+              <input className="input w-full mb-4 border-gray-300 text-black" type="tel" name="phone" id="phone" placeholder="Enter your phone number" required />
 
               <label htmlFor="password" className="block font-medium mb-2">Password</label>
               <div className="relative">
-                <input className="input w-full border-gray-300" onChange={onPassChange} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Enter your password" required />
+                <input className="input w-full border-gray-300 text-black" onChange={onPassChange} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Enter your password" required />
                 {
                   showEye && <div className="absolute top-1/2 right-4 -translate-y-1/2 text-xl cursor-pointer select-none" onClick={() => setShowPass(!showPass)}>
                     {
