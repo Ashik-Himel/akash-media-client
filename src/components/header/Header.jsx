@@ -88,7 +88,7 @@ export default function Header() {
             <img src={brandLogo} alt="Brand Logo" className='w-[80px]' />
           </Link>
 
-          <ul className='font-medium uppercase gap-6 hidden lg:flex justify-center items-center'>
+          <ul className='font-medium uppercase gap-6 hidden xl:flex justify-center items-center'>
             <li>
               <NavLink to='/' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Home</NavLink>
             </li>
@@ -129,7 +129,7 @@ export default function Header() {
             </select>
           </ul>
 
-          <div className='flex justify-center items-center gap-4 lg:hidden'>
+          <div className='flex justify-center items-center gap-4 xl:hidden'>
             <div>
               {
                 userLoaded ? user ? <Link to='/stream' className='btn btn-primary'>Stream</Link> : <Link to='/login' className='btn btn-primary'>Login</Link> : <div className='btn btn-primary'>
