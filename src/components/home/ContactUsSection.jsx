@@ -45,7 +45,7 @@ export default function ContactUsSection({contactRef}) {
           <div className='hidden md:block'>
             <img src={contactImg} alt="Contact Section Image" className='w-full max-w-[450px]' />
           </div>
-          <form onSubmit={handleSubmit} ref={form}>
+          <form className='dark:[&>input]:bg-gray-700 dark:[&>input]:border-gray-700' onSubmit={handleSubmit} ref={form}>
             <label htmlFor="name" className='block font-medium mb-2'>Name</label>
             <input className='input w-full border-2 border-bg-color mb-4' type="text" name="name" id="name" placeholder='Enter your name' required />
             
@@ -59,7 +59,7 @@ export default function ContactUsSection({contactRef}) {
             <input className='input w-full border-2 border-bg-color mb-4' type="text" name="subject" id="subject" placeholder='Enter the subject' required />
 
             <label htmlFor="message" className='block font-medium mb-2'>Message</label>
-            <textarea className='textarea resize-none w-full h-[100px] border-2 border-bg-color text-base mb-4' name="message" placeholder='Enter your message' required></textarea>
+            <textarea className='textarea resize-none w-full h-[100px] border-2 border-bg-color text-base mb-4 dark:bg-gray-700 dark:border-gray-700' name="message" placeholder='Enter your message' required></textarea>
             <button className='btn btn-primary' type="submit">Send Message</button>
           </form>
         </div>

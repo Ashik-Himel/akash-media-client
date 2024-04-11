@@ -12,7 +12,7 @@ const QuickLinkCard = ({ to, onClick, icon, altText, text }) => {
     <Link
       to={to}
       onClick={onClick}
-      className="bg-bg-color p-4 rounded flex justify-start items-center gap-4"
+      className="bg-bg-color dark:bg-gray-700 p-4 rounded flex justify-start items-center gap-4"
     >
       <img src={icon} alt={altText} className="w-8" />
       <span className="text-xl font-semibold">{text}</span>

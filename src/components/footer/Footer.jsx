@@ -5,7 +5,7 @@ import whatsappIcon from "../../assets/whatsapp.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-color mt-12 lg:mt-16">
+    <footer className="bg-bg-color dark:bg-gray-700 mt-12 lg:mt-16">
       <div className="container">
         <div className="py-10 grid grid-cols-[auto] sm:grid-cols-[auto_auto] lg:grid-cols-[auto_auto_auto] gap-8 justify-between items-center">
           <div className="sm:col-span-2 lg:col-span-1">

@@ -57,7 +57,7 @@ const PackagePurchase = ({packageObj, purchaseVisible, setPurchaseVisible}) => {
 
   return (
     <div className="justify-center items-center fixed inset-0 bg-[rgba(0,0,0,0.7)] z-50 p-6" style={purchaseVisible ? {display: "flex"} : {display: "none"}}>
-      <div className="bg-white rounded-lg p-8 relative overflow-auto w-full max-w-[500px] mx-auto max-h-[calc(100vh-3rem)]">
+      <div className="bg-white dark:bg-gray-700 rounded-lg p-8 relative overflow-auto w-full max-w-[500px] mx-auto max-h-[calc(100vh-3rem)]">
         <div className="absolute top-4 right-4 text-2xl text-primary cursor-pointer select-none" onClick={() => setPurchaseVisible(false)}>
           <FaXmark />
         </div>
@@ -72,7 +72,7 @@ const PackagePurchase = ({packageObj, purchaseVisible, setPurchaseVisible}) => {
 
           <form className="mt-6" onSubmit={handleStreamPackagePurchase}>
             <label htmlFor="email" className="font-medium block mb-2">Purchasing For (Email)</label>
-            <input className="input w-full border border-gray-300 mb-4" type="email" name="email" id="email" placeholder="Enter your account's email" defaultValue={user?.email || ''} required />
+            <input className="input w-full border border-gray-300 mb-4 dark:text-black" type="email" name="email" id="email" placeholder="Enter your account's email" defaultValue={user?.email || ''} required />
             <button type="submit" className="btn btn-primary">Pay Now</button>
           </form>
         </div>
@@ -88,7 +88,7 @@ const PackageCard = ({packageObj}) => {
 
   return (
     <div
-      className={`bg-bg-color px-6 py-8 rounded-lg text-center`}
+      className={`bg-bg-color dark:bg-gray-700 px-6 py-8 rounded-lg text-center`}
     >
       <span className="block text-primary font-bold uppercase mb-2">
         {name}

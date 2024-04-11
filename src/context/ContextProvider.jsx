@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import { getTheme } from "../lib/theme";
 
 export const AllContext = createContext(null);
 
 export default function ContextProvider({children}) {
   const [user, setUser] = useState(null);
   const [userLoaded, setUserLoaded] = useState(false);
+  const [themeValue, setThemeValue] = useState('system');
   const axiosPublic = useAxiosPublic();
-  console.log(user);
 
   useEffect(() => {
+    setThemeValue(getTheme());
     const unSubscribe = onAuthStateChanged(auth, user => {
       if (user?.email) {
         axiosPublic(`/user?uid=${user?.uid}`, {withCredentials: true})
@@ -35,7 +37,9 @@ export default function ContextProvider({children}) {
     user,
     setUser,
     userLoaded,
-    setUserLoaded
+    setUserLoaded,
+    themeValue,
+    setThemeValue
   }
   return (
     <AllContext.Provider value={value}>

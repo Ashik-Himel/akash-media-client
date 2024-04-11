@@ -43,7 +43,7 @@ export default function Channels() {
 
       <div className="container mt-12 mb-6">
         <div className="w-full max-w-[500px] mx-auto relative">
-          <input type="search" name="search" id="search" placeholder="Search Channel" onChange={handleOnChange} className="input w-full block bg-bg-color border-primary pr-10" />
+          <input type="search" name="search" id="search" placeholder="Search Channel" onChange={handleOnChange} className="input w-full block bg-bg-color dark:bg-gray-700 border-primary dark:!border-gray-700 pr-10" />
         <IoSearchOutline className="absolute right-4 top-1/2 -translate-y-1/2 text-xl" />
         </div>
       </div>

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const FeatureCard = ({img, text}) => {
   return (
-    <div className='border-2 border-gray-300 px-6 py-10 text-center'>
+    <div className='border-2 border-gray-300 dark:bg-gray-700 dark:border-gray-700 px-6 py-10 text-center'>
       <img src={img} alt="Channels Icon" className='w-[100px] mx-auto mb-8' />
       <h4 className='text-xl font-semibold uppercase'>{text}</h4>
     </div>

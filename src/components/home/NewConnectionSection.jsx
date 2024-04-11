@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function NewConnectionSection({mt}) {
   return (
-    <section className={`${mt} bg-bg-color py-16`}>
+    <section className={`${mt} bg-bg-color dark:bg-gray-700 py-16`}>
       <div className="container">
         <div className='flex flex-col-reverse md:flex-row justify-between md:items-center gap-8 [&>*]:flex-1'>
           <div>

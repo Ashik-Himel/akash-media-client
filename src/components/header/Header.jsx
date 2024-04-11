@@ -9,9 +9,10 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
+import { setTheme } from '../../lib/theme';
 
 export default function Header() {
-  const {user, setUser, userLoaded} = useAllContext();
+  const {user, setUser, userLoaded, themeValue, setThemeValue} = useAllContext();
   const [drawerShow, setDrawerShow] = useState(false);
   const [headerShadow, setHeaderShadow] = useState(false);
   const [profileCardShow, setProfileCardShow] = useState(false);
@@ -80,7 +81,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 bg-white z-40 transition-shadow duration-300 ${headerShadow ? '[box-shadow:0px_10px_50px_rgba(0,0,0,0.2)]' : ''}`}>
+    <header className={`sticky top-0 bg-white dark:bg-gray-900 dark:text-white z-40 transition-shadow duration-300 ${headerShadow ? '[box-shadow:0px_10px_50px_rgba(0,0,0,0.2)]' : ''}`}>
       <div className="container">
         <nav className='flex justify-between items-center gap-4 py-4 relative'>
           <Link to='/'>
@@ -89,19 +90,19 @@ export default function Header() {
 
           <ul className='font-medium uppercase gap-6 hidden lg:flex justify-center items-center'>
             <li>
-              <NavLink to='/' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Home</NavLink>
+              <NavLink to='/' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Home</NavLink>
             </li>
             <li>
-              <NavLink to='/channels' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Channels</NavLink>
+              <NavLink to='/channels' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Channels</NavLink>
             </li>
             <li>
-              <NavLink to='/recharge' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Recharge</NavLink>
+              <NavLink to='/recharge' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Recharge</NavLink>
             </li>
             <li>
-              <NavLink to='/packages' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Packages</NavLink>
+              <NavLink to='/packages' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Packages</NavLink>
             </li>
             <li>
-              <NavLink to='/get-connection' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary'}>Get a connection</NavLink>
+              <NavLink to='/get-connection' className={({isActive}) => isActive ? 'text-primary border-b-2 border-primary' : 'hover:text-primary dark:hover:text-[#ff4500]'}>Get a connection</NavLink>
             </li>
             {
               userLoaded ? user ? <li>
@@ -115,9 +116,17 @@ export default function Header() {
             {
               user && <div className="flex justify-center items-center gap-2 cursor-pointer select-none relative" onClick={() => setProfileCardShow(!profileCardShow)} ref={profileImgRef}>
                 <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[35px] h-[35px] object-cover object-center rounded-full" />
-                <span className={`w-5 h-5 bg-gray-300 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
+                <span className={`w-5 h-5 bg-gray-300 dark:bg-gray-700 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
               </div>
             }
+            <select name="theme-toggler" id="theme-toggler" className='px-2 py-[6px] rounded-md bg-bg-color dark:bg-gray-700 dark:text-white cursor-pointer select-none' onChange={e => {
+              setThemeValue(e.target.value);
+              setTheme(e.target.value);
+            }}>
+              <option value="light" selected={themeValue === "light"}>Light</option>
+              <option value="dark" selected={themeValue === "dark"}>Dark</option>
+              <option value="system" selected={themeValue === "system"}>System</option>
+            </select>
           </ul>
 
           <div className='flex justify-center items-center gap-4 lg:hidden'>
@@ -131,7 +140,7 @@ export default function Header() {
             {
               user && <div className="flex justify-center items-center gap-2 cursor-pointer select-none relative" onClick={() => setProfileCardShow(!profileCardShow)} ref={profileImgRef2}>
                 <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[35px] h-[35px] object-cover object-center rounded-full" />
-                <span className={`w-5 h-5 bg-gray-300 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
+                <span className={`w-5 h-5 bg-gray-300 dark:bg-gray-700 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
               </div>
             }
             <div className='text-2xl cursor-pointer select-none' onClick={() => setDrawerShow(!drawerShow)} ref={barRef}>
@@ -141,7 +150,7 @@ export default function Header() {
 
           {/* Profile Card */}
           {
-            user && <div className={`absolute top-[calc(100%-2px)] right-0 bg-gray-300 p-6 rounded-lg w-full max-w-[350px] text-center z-10 [box-shadow:0px_5px_30px_rgba(0,0,0,0.3)] ${profileCardShow ? 'block' : 'hidden'}`} ref={profileCardRef}>
+            user && <div className={`absolute top-[calc(100%-2px)] right-0 bg-gray-300 dark:bg-gray-700 dark:text-white p-6 rounded-lg w-full max-w-[350px] text-center z-10 [box-shadow:0px_5px_30px_rgba(0,0,0,0.3)] ${profileCardShow ? 'block' : 'hidden'}`} ref={profileCardRef}>
               <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[60px] h-[60px] object-cover object-center rounded-full block mx-auto mb-4" />
               <span className="block text-[18px] font-medium">{user?.name || "No Name"}</span>
               <span className="block mb-4">{user?.email || "No Email"}</span>

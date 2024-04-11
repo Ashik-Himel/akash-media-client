@@ -77,6 +77,7 @@ export default function StreamHeader() {
         setProfileCardShow(false);
       }
       if (searchIconRef.current && !searchIconRef.current?.contains(e.target) && searchAreaRef.current && !searchAreaRef.current?.contains(e.target)) {
+        setSearchText('');
         setSearchShow(false);
       }
     }
@@ -88,7 +89,7 @@ export default function StreamHeader() {
   }, []);
 
   return (
-    <header className={`sticky top-0 bg-white border-b border-gray-300 z-40`}>
+    <header className={`sticky top-0 bg-white dark:bg-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-700 z-40`}>
       <div className="container">
         <nav className='flex justify-between items-center gap-5 py-4 relative'>
           <Link to='/stream'>
@@ -100,18 +101,18 @@ export default function StreamHeader() {
               <IoHome />
             </Link>
 
-            <div className='text-2xl cursor-pointer select-none' onClick={() => setSearchShow(true)} ref={searchIconRef}>
+            <label htmlFor='search' className='text-2xl cursor-pointer select-none' onClick={() => setSearchShow(true)} ref={searchIconRef}>
               <IoSearch />
-            </div>
+            </label>
             
             <div className="flex justify-center items-center gap-2 cursor-pointer select-none relative" onClick={() => setProfileCardShow(!profileCardShow)} ref={profileImgRef}>
               <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[35px] h-[35px] object-cover object-center rounded-full" />
-              <span className={`w-5 h-5 bg-gray-300 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
+              <span className={`w-5 h-5 bg-gray-300 dark:bg-gray-700 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
             </div>
 
-            <div className={`bg-white border-primary rounded absolute right-0 top-[15px] overflow-hidden transition-[width_border] duration-300 ${searchShow ? "w-full md:w-[400px] border-2" : "w-0 border-none"}`} ref={searchAreaRef}>
+            <div className={`bg-white border-primary rounded absolute right-0 top-[15px] overflow-hidden transition-[width] duration-300 ${searchShow ? "w-full md:w-[400px] border-2" : "w-0 border-x-0"}`} ref={searchAreaRef}>
               <div className='w-full flex justify-center items-center'>
-                <input type="text" name="search" id="search" placeholder='Search Channel' value={searchText} className='w-full px-4 py-2 focus:outline-none' onChange={e => {
+                <input type="search" name="search" id="search" placeholder='Search Channel' value={searchText} className='w-full px-4 py-2 focus:outline-none' onChange={e => {
                   setSearchText(e.target.value);
                   refetch();
                 }} />
@@ -137,7 +138,7 @@ export default function StreamHeader() {
             </div>
 
             {/* Profile Card */}
-            <div className={`absolute top-[calc(100%-2px)] right-0 bg-gray-300 p-6 rounded-lg w-full max-w-[350px] text-center z-10 [box-shadow:0px_5px_30px_rgba(0,0,0,0.3)] ${profileCardShow ? 'block' : 'hidden'}`} ref={profileCardRef}>
+            <div className={`absolute top-[calc(100%-2px)] right-0 bg-gray-300 dark:bg-gray-700 dark:text-white p-6 rounded-lg w-full max-w-[350px] text-center z-10 [box-shadow:0px_5px_30px_rgba(0,0,0,0.3)] ${profileCardShow ? 'block' : 'hidden'}`} ref={profileCardRef}>
               <img src={user?.photoURL || ProfilePic} alt="User's Photo" className="w-[60px] h-[60px] object-cover object-center rounded-full block mx-auto mb-4" />
               <span className="block text-[18px] font-medium">{user?.name || "No Name"}</span>
               <span className="block mb-4">{user?.email || "No Email"}</span>

@@ -9,7 +9,7 @@ export default function FaqSection({faqRef}) {
         </h2>
 
         <div className="space-y-2 w-full max-w-[900px] mx-auto">
-          <div className="collapse collapse-plus bg-base-200">
+          <div className="collapse collapse-plus bg-base-200 dark:bg-gray-700">
             <input type="radio" name="my-accordion-3" defaultChecked /> 
             <div className="collapse-title text-xl font-medium">
               How many TV channels do you provide?
@@ -18,7 +18,7 @@ export default function FaqSection({faqRef}) {
               <p>We are providing 250+ channels with 80+ HD channels.</p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200">
+          <div className="collapse collapse-plus bg-base-200 dark:bg-gray-700">
             <input type="radio" name="my-accordion-3" /> 
             <div className="collapse-title text-xl font-medium">
               What I need to enjoy your services?
@@ -27,7 +27,7 @@ export default function FaqSection({faqRef}) {
               <p>You just need to buy our TV Box and a package with it. Then you are done!</p>
             </div>
           </div>
-          <div className="collapse collapse-plus bg-base-200">
+          <div className="collapse collapse-plus bg-base-200 dark:bg-gray-700">
             <input type="radio" name="my-accordion-3" /> 
             <div className="collapse-title text-xl font-medium">
               Which payment method do you provide?

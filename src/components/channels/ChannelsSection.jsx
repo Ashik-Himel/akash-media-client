@@ -11,7 +11,7 @@ export default function ChannelsSection({sectionHeading, channels}) {
   return (
     <section>
       <div className="container">
-        <div className='flex justify-between items-center gap-4 bg-bg-color mb-2 px-4 py-3 rounded-md cursor-pointer select-none' onClick={() => setExpanded(!expanded)}>
+        <div className='flex justify-between items-center gap-4 bg-bg-color dark:bg-gray-700 mb-2 px-4 py-3 rounded-md cursor-pointer select-none' onClick={() => setExpanded(!expanded)}>
           <span className='text-[18px] font-semibold uppercase'>{sectionHeading} ({channels?.length || 0})</span>
           <div className='text-primary text-2xl'>
             {

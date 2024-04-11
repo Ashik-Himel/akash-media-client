@@ -33,7 +33,7 @@ function ProfilePackageCard({pkg, email}) {
   }
 
   return (
-    <div className="bg-bg-color p-4 rounded-lg">
+    <div className="bg-bg-color dark:bg-gray-700 p-4 rounded-lg">
       <h4 className="text-xl font-medium text-primary">{pkg?.name}</h4>
       <span className="block mb-2">{pkg?.price} taka / {pkg?.duration} days</span>
       {
@@ -58,13 +58,13 @@ export default function UserProfile() {
   })
 
   return (
-    <main className="mb-12">
+    <main className="pb-12">
       <Helmet>
         <title>My Profile - Akash Media</title>
       </Helmet>
 
       {
-        !user?.emailVerified && <div className="bg-bg-color px-6 py-2 text-center font-medium">
+        !user?.emailVerified && <div className="bg-bg-color dark:bg-gray-700 px-6 py-2 text-center font-medium">
           <p>Your account is not verified. Verify your account now! <Link to='/stream/verify-user' className="text-primary underline">Verify Now</Link></p>
         </div>
       }
@@ -85,11 +85,16 @@ export default function UserProfile() {
             <Link to='/packages' className="border-2 border-primary font-medium text-primary rounded-full px-2 py-px">Add Package</Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-            {
-              packages?.map(pkg => <ProfilePackageCard key={pkg?._id} pkg={pkg} email={user?.email} />)
-            }
-          </div>
+          {
+            packages?.length !== 0 ? <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+              {
+                packages?.map(pkg => <ProfilePackageCard key={pkg?._id} pkg={pkg} email={user?.email} />)
+              }
+            </div> : <div className="bg-bg-color dark:bg-gray-700 p-6 rounded-lg text-center">
+              <span className="block text-2xl font-medium text-primary mb-6">No Packages Found!</span>
+              <Link to='/packages' className="btn btn-primary">Buy Package</Link>
+            </div>
+          }
         </div>
       </section>
     </main>

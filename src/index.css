@@ -11,6 +11,22 @@
   }
 }
 
+.text-primary {
+  @apply dark:!text-[#ff4500];
+}
+.bg-primary {
+  @apply dark:!bg-[#ff4500];
+}
+.border-primary {
+  @apply dark:!border-[#ff4500];
+}
+.btn-primary {
+  @apply dark:!bg-[#ff4500] dark:border-[#ff4500] dark:hover:!border-[#ff4500];
+}
+.btn-outline {
+  @apply dark:!bg-transparent dark:!text-[#ff4500] dark:hover:!border-[#ff4500];
+}
+
 swiper-container::part(button-prev) {
   @apply text-white bg-primary py-2 px-3 rounded-full w-4 h-6;
 }
@@ -22,8 +38,4 @@ swiper-container::part(bullet) {
 }
 swiper-container::part(bullet-active) {
   @apply bg-white
-}
-
-.react-tel-input .form-control {
-  @apply input !w-full !h-[50px] !text-base;
 }
