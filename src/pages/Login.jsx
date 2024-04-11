@@ -133,7 +133,7 @@ export default function Login() {
                   e.target.value ? setShowEye(true) : setShowEye(false);
                 }} type={showPass ? "text" : "password"} name="password" id="password" placeholder="Enter your password" required />
                 {
-                  showEye && <div className="absolute top-1/2 right-4 -translate-y-1/2 text-xl cursor-pointer select-none" onClick={() => setShowPass(!showPass)}>
+                  showEye && <div className="absolute top-1/2 right-4 -translate-y-1/2 text-xl cursor-pointer select-none text-black" onClick={() => setShowPass(!showPass)}>
                     {
                       showPass ? <FaEyeSlash /> : <FaEye />
                     }

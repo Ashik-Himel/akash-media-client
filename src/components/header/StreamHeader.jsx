@@ -110,9 +110,9 @@ export default function StreamHeader() {
               <span className={`w-5 h-5 bg-gray-300 dark:bg-gray-700 rotate-45 absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 z-50 ${profileCardShow ? 'block' : 'hidden'}`}></span>
             </div>
 
-            <div className={`bg-white border-primary rounded absolute right-0 top-[15px] overflow-hidden transition-[width] duration-300 ${searchShow ? "w-full md:w-[400px] border-2" : "w-0 border-x-0"}`} ref={searchAreaRef}>
+            <div className={`bg-white dark:bg-gray-700 border-primary dark:!border-gray-700 rounded absolute right-0 top-[15px] overflow-hidden transition-[width] duration-300 ${searchShow ? "w-full md:w-[400px] border-2" : "w-0 border-x-0"}`} ref={searchAreaRef}>
               <div className='w-full flex justify-center items-center'>
-                <input type="search" name="search" id="search" placeholder='Search Channel' value={searchText} className='w-full px-4 py-2 focus:outline-none' onChange={e => {
+                <input type="search" name="search" id="search" placeholder='Search Channel' value={searchText} className='dark:bg-inherit w-full px-4 py-2 focus:outline-none' onChange={e => {
                   setSearchText(e.target.value);
                   refetch();
                 }} />
@@ -124,7 +124,7 @@ export default function StreamHeader() {
                 </div>
               </div>
 
-              <div className={`w-full [&>*:first-child]:border-t-2 [&>*:first-child]:border-t-primary [&>*:last-child]:border-b-none ${searchShow ? 'block' : 'hidden'}`}>
+              <div className={`w-full [&>*:first-child]:border-t-2 [&>*:first-child]:border-t-primary dark:[&>*:first-child]:border-t-gray-300 [&>*:last-child]:border-b-none ${searchShow ? 'block' : 'hidden'}`}>
                 {
                   isLoading ? <div className='text-center border-b-2 border-gray-300 px-4 py-2'>
                     <span className="loading loading-spinner loading-md"></span>
